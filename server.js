@@ -3,11 +3,15 @@ const app = express();
 const path = require('path');
 const queryString = require('query-string');
 const randomstring = require("randomstring");
+const cors = require('cors');
+const cookieParser = require('cookie-parser');
+const request = require('request');
 
 // Variables used for authorization
 const client_id = '26de0e4db2204b8fb4860589f4485263';
 const redirect_uri = 'http://localhost:3000/callback';
 const client_secret = '4e343703cfec4354a327cc82c1302fa4'; // Should be added to env. in the future
+const stateKey = 'spotify_auth_state';
 
 app.use(express.static(path.join(__dirname, 'build')));
 
@@ -19,8 +23,8 @@ app.get('/', function (req, res) {
 app.get('/login', function(req, res) {
   console.log("Opening login page...")
   var state = randomstring.generate(16);
-  var scope = 'user-read-private user-read-email user-read-playback-position user-top-read user-read-recently-played';
-  
+  var scope = 'user-read-private user-read-email';
+
   res.redirect('https://accounts.spotify.com/authorize?' +
     queryString.stringify({
       response_type: 'code',
@@ -30,11 +34,6 @@ app.get('/login', function(req, res) {
       state: state
     }));
 });
-
-app.get('/authorize', function(req, res){
-    console.log("Authorization...")
-    res.get()
-})
 
 // Get callback
 
@@ -46,7 +45,7 @@ app.get('/callback', function(req, res) {
   if (state === null) {
     console.log("State is null...")
     res.redirect('/#' +
-      querystring.stringify({
+      queryString.stringify({
         error: 'state_mismatch'
       }));
   } else {
@@ -63,9 +62,40 @@ app.get('/callback', function(req, res) {
       },
       json: true
     };
-    res.redirect('/')
-    console.log(authOptions)
+
+    request.post(authOptions, function(error, response, body) {
+      if (!error && response.statusCode === 200) {
+
+        var access_token = body.access_token,
+            refresh_token = body.refresh_token;
+
+        var options = {
+          url: 'https://api.spotify.com/v1/me',
+          headers: { 'Authorization': 'Bearer ' + access_token },
+          json: true
+        };
+
+        // use the access token to access the Spotify Web API
+        request.get(options, function(error, response, body) {
+          console.log(response);
+        });
+
+        // we can also pass the token to the browser to make requests from there
+        res.redirect('/#' +
+          queryString.stringify({
+            access_token: access_token,
+            refresh_token: refresh_token,
+            display_name: body.display_name
+          }));
+      } else {
+        res.redirect('/#' +
+          queryString.stringify({
+            error: 'invalid_token'
+          }));
+      }
+    });
   }
+  
 });
 
 // Refresh token
@@ -84,6 +114,8 @@ app.get('/refresh_token', function(req, res) {
   };
 
   request.post(authOptions, function(error, response, body) {
+    //console.log(body)
+    console.log(response.statusCode)
     if (!error && response.statusCode === 200) {
       var access_token = body.access_token;
       res.send({
@@ -91,41 +123,10 @@ app.get('/refresh_token', function(req, res) {
       });
     }
   });
+  res.redirect('/')
 });
 
 app.listen(3000, () => {
     console.log("server is runnig on port 3000...");
     console.log("Open your browser and hit url 'localhost:3000'");
  }); 
-
-//var request = require('request'); // "Request" library
-
-// // your application requests authorization
-// var authOptions = {
-//   url: 'https://accounts.spotify.com/api/token',
-//   headers: {
-//     'Authorization': 'Basic ' + (new Buffer(client_id + ':' + client_secret).toString('base64'))
-//   },
-//   form: {
-//     grant_type: 'client_credentials'
-//   },
-//   json: true
-// };
-
-// request.post(authOptions, function(error, response, body) {
-//   if (!error && response.statusCode === 200) {
-
-//     // use the access token to access the Spotify Web API
-//     var token = body.access_token;
-//     var options = {
-//       url: 'https://api.spotify.com/v1/users/jmperezperez',
-//       headers: {
-//         'Authorization': 'Bearer ' + token
-//       },
-//       json: true
-//     };
-//     request.get(options, function(error, response, body) {
-//       console.log(body);
-//     });
-//   }
-// });
