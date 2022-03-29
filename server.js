@@ -6,12 +6,12 @@ const randomstring = require("randomstring");
 const cors = require('cors');
 const cookieParser = require('cookie-parser');
 const request = require('request');
+const fs = require('fs');
 
 // Variables used for authorization
 const client_id = '26de0e4db2204b8fb4860589f4485263';
 const redirect_uri = 'http://localhost:3000/callback';
 const client_secret = '4e343703cfec4354a327cc82c1302fa4'; // Should be added to env. in the future
-const stateKey = 'spotify_auth_state';
 
 app.use(express.static(path.join(__dirname, 'build')));
 
@@ -23,7 +23,7 @@ app.get('/', function (req, res) {
 app.get('/login', function(req, res) {
   console.log("Opening login page...")
   var state = randomstring.generate(16);
-  var scope = 'user-read-private user-read-email';
+  var scope = 'user-read-private user-read-email user-library-read user-top-read';
 
   res.redirect('https://accounts.spotify.com/authorize?' +
     queryString.stringify({
@@ -70,16 +70,49 @@ app.get('/callback', function(req, res) {
             refresh_token = body.refresh_token;
 
         var options = {
-          url: 'https://api.spotify.com/v1/me',
+          url: 'https://api.spotify.com/v1/me/top/tracks',
           headers: { 'Authorization': 'Bearer ' + access_token },
           json: true
         };
 
         // use the access token to access the Spotify Web API
         request.get(options, function(error, response, body) {
-          console.log(response);
+          console.log(options);
+          for (let i in body.items) {
+            console.log(body.items[i].name);
+          };
+          console.log(body.items)
+          var data = JSON.stringify(body.items);
+          fs.writeFileSync('data/tracks.json', data, (err) => {
+            if (err) throw err;
+            console.log('Data written to file')
+          })
+          
         });
 
+        var options = {
+          url: 'https://api.spotify.com/v1/me/top/artists',
+          headers: { 'Authorization': 'Bearer ' + access_token },
+          json: true
+        };
+
+        // use the access token to access the Spotify Web API
+        request.get(options, function(error, response, body) {
+          console.log(options);
+          for (let i in body.items) {
+            console.log(body.items[i].name);
+          };
+          console.log(body.items)
+          var data = JSON.stringify(body.items);
+          fs.writeFileSync('data/artists.json', data, (err) => {
+            if (err) throw err;
+            console.log('Data written to file')
+          })
+          
+        });
+
+        debugger
+        
         // we can also pass the token to the browser to make requests from there
         res.redirect('/#' +
           queryString.stringify({

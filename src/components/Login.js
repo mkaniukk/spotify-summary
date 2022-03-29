@@ -3,7 +3,7 @@ import reactDom from 'react-dom'
 function Login(props){
    return (
       <div>
-         <h1>Logged in as {props.display_name}</h1>
+         <h1>Logged in as {display_name}</h1>
          <img id="avatar" width="200" src="" />
          <dl>
          <dt>{props.name}</dt><dd></dd>
