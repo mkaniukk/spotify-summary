@@ -23,12 +23,12 @@ var user_id = '';
 app.use(express.static(path.join(__dirname, 'build')));
 
 app.get('/', async (req, res) => {
-  console.log("Opening main page...")
+ // console.log("Opening main page...")
   res.sendFile(path.join(__dirname, 'build', 'index.html'))
 });
 
 app.get('/login', async(req, res) => {
-  console.log("Opening login page...")
+ // console.log("Opening login page...")
   var state = randomstring.generate(16);
   var scope = 'user-read-private user-read-email user-library-read user-top-read';
 
@@ -45,18 +45,18 @@ app.get('/login', async(req, res) => {
 // Get callback
 
 app.get('/callback', async (req, res) => {
-  console.log("Open callback...")
+ // console.log("Open callback...")
   var code = req.query.code || null;
   var state = req.query.state || null;
 
   if (state === null) {
-    console.log("State is null...")
+   // console.log("State is null...")
     res.redirect('/#' +
       queryString.stringify({
         error: 'state_mismatch'
       }));
   } else {
-    console.log("State is not null...")
+   // console.log("State is not null...")
     var authOptions = {
       url: 'https://accounts.spotify.com/api/token',
       form: {
@@ -84,9 +84,6 @@ app.get('/callback', async (req, res) => {
         // use the access token to access the Spotify Web API
         request.get(personalOptions, async (error, response, body) => {
           user_id = body.id;
-          res.render('App', {
-            name: body.display_name
-          })
         });
 
         var tracksOptions = {
@@ -97,15 +94,15 @@ app.get('/callback', async (req, res) => {
 
         // use the access token to access the Spotify Web API
         request.get(tracksOptions, async (error, response, body) => {
-          console.log(body);
+         // console.log(body);
           for (let i in body.items) {
             //console.log(body.items[i].name + " - " + body.items[i].artists[0].name);
           };
           //console.log(body.items)
           var data = JSON.stringify(body.items);
-          fs.writeFileSync('data/'+ user_id +'_tracks.json', data, (err) => {
+          fs.writeFileSync('data/tracks.json', data, (err) => {
             if (err) throw err;
-            console.log('Data written to file')
+           // console.log('Data written to file')
           })
           
         });
@@ -118,44 +115,43 @@ app.get('/callback', async (req, res) => {
 
         // use the access token to access the Spotify Web API
         request.get(artitstsOptions, async (error, response, body) => {
-          console.log(artitstsOptions);
+         // console.log(artitstsOptions);
           for (let i in body.items) {
             //console.log(body.items[i].name);
             localStorage.setItem(toString(i), body.items[i].name)
           };
           //console.log(body.items)
           var data = JSON.stringify(body.items);
-          fs.writeFileSync('data/'+ user_id +'_artists.json', data, (err) => {
+          fs.writeFileSync('data/artists.json', data, (err) => {
           if (err) throw err;
-            console.log('Data written to file')
+           // console.log('Data written to file')
           })
           
         });
-        
-        debugger
-        
+                
         // we can also pass the token to the browser to make requests from there
         res.redirect('/#' +
           queryString.stringify({
             access_token: access_token,
-            refresh_token: refresh_token,
-            display_name: body.display_name
+            refresh_token: refresh_token
           }));
+
       } else {
         res.redirect('/#' +
           queryString.stringify({
             error: 'invalid_token'
           }));
       }
+
     });
   }
-  debugger
+
 });
 
 // Refresh token
 
 app.get('/refresh_token', async (req, res) => {
-  console.log("Open refresh token...")
+ // console.log("Open refresh token...")
   var refresh_token = req.query.refresh_token;
   var authOptions = {
     url: 'https://accounts.spotify.com/api/token',
@@ -169,7 +165,7 @@ app.get('/refresh_token', async (req, res) => {
 
   request.post(authOptions, async (error, response, body) => {
     //console.log(body)
-    console.log(response.statusCode)
+   // console.log(response.statusCode)
     if (!error && response.statusCode === 200) {
       var access_token = body.access_token;
       res.send({
@@ -181,6 +177,6 @@ app.get('/refresh_token', async (req, res) => {
 });
 
 app.listen(3000, () => {
-    console.log("server is runnig on port 3000...");
-    console.log("Open your browser and hit url 'localhost:3000'");
+   // console.log("server is runnig on port 3000...");
+   // console.log("Open your browser and hit url 'localhost:3000'");
  }); 
