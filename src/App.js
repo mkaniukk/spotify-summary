@@ -1,22 +1,18 @@
 import logo from './logo.svg';
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { Route, BrowserRouter, Routes } from 'react-router-dom';
 import './App.css';
-import Clock from './components/Clock'
-import Greeting from './components/Greeting.js'
 import Topbar from './components/Topbar'
-import Login from './components/Login'
+import Main from './components/Main'
+import Top from './components/Top'
+import Layout from './components/Layout'
 
-function App() {
+function App(props) {
+  console.log(props.location)
   return (
-    <div className="App">
-      <header>
-        <Topbar />
-      </header>
-      <div>
-      {/*}  <Browser />  */}
-      <Login />
-      </div>
+    <div>
+      <Main />
     </div>
   );
 }

@@ -12,12 +12,6 @@ html, body {
   pointer-events: none;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
@@ -59,14 +53,12 @@ ul {
 }
 
 button {
-  background-color: gray;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+  display: block;
+  justify-content: center;
+  text-align: center;
+  margin: auto;
+  height: 100px;
+  width: 75%;
+  color: black;
+  background-color: rgb(0, 165, 0); 
 }
