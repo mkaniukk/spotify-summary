@@ -1,33 +1,39 @@
 import React, { Component, useEffect, useState } from 'react';
 import { Link } from "react-router-dom";
+import axios from 'axios';
 
 function TopArtists () {
-    const [artists, setArtists] = React.useState([]);
+    const [data, setData] = React.useState([{}]);
     console.log("top artists")
 
     useEffect(() => {
         console.log("Use effect");
-        fetch('./artists')
+        
+        // const fetchArtists = async () => {
+        //     const response = await axios.get('http://localhost:3000/artists').catch(err => console.log(err))
+        //     console.log(response);
+        //     setArtists(response.data).catch(err => console.log(err));
+        // }
+        // fetchArtists();
+        
+        fetch('/artists')
         .then(res => {
             console.log(res);
             return res.json()
         })
-        .then(users => {
-            console.log(users);
-            setArtists({users})
+        .then(artists => {
+            console.log(artists);
+            setData({data: artists})
         })
-    })
+        .catch(function(err){
+            console.log('Error');
+        })
+        
+    }, [])
 
     return (
         <div>
-            <div>
-                Hello
-            </div>
-            <div>
-                {this.state.users.map(user =>
-                <div key={user.id}>user: {user.name} Password: {user.password}</div>
-            )}
-            </div>
+            
         </div>
     );
 

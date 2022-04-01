@@ -8,6 +8,7 @@ const cookieParser = require('cookie-parser');
 const request = require('request');
 const fs = require('fs');
 const { debug } = require('console');
+const router = express.Router();
 
 if (typeof localStorage === "undefined" || localStorage === null) {
   var LocalStorage = require('node-localstorage').LocalStorage;
@@ -19,6 +20,7 @@ const client_id = '26de0e4db2204b8fb4860589f4485263';
 const redirect_uri = 'http://localhost:3000/callback';
 const client_secret = '4e343703cfec4354a327cc82c1302fa4'; // Should be added to env. in the future
 var user_id = '';
+var artists = {}
 
 app.use(express.static(path.join(__dirname, 'build')));
 
@@ -96,7 +98,8 @@ app.get('/callback', async (req, res) => {
         request.get(tracksOptions, async (error, response, body) => {
          // console.log(body);
           for (let i in body.items) {
-            //console.log(body.items[i].name + " - " + body.items[i].artists[0].name);
+            console.log(body.items[i].name + " - " + body.items[i].artists[0].name);
+            artists[body.items[i].name] = body.items[i].artists[0].name;
           };
           //console.log(body.items)
           var data = JSON.stringify(body.items);
@@ -176,7 +179,24 @@ app.get('/refresh_token', async (req, res) => {
   res.redirect('/')
 });
 
+// router.get('/artists', async (req, res) => 
+//   res.json([{
+//     name:'Michal',
+//     id:'001'
+//   }])
+// )
+
+app.get('/artists', async (req, res) => 
+  // res.json([{
+  //   name:'Michal',
+  //   id:'001'
+  // }])
+  res.json(artists)
+)
+
+// module.exports = router;
+
 app.listen(3000, () => {
-   // console.log("server is runnig on port 3000...");
-   // console.log("Open your browser and hit url 'localhost:3000'");
+  console.log("server is runnig on port 3000...");
+  console.log("Open your browser and hit url 'localhost:3000'");
  }); 

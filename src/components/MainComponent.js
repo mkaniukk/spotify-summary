@@ -9,9 +9,6 @@ function MainComponent () {
                 <Topbar />
             </div>
             <div>
-                <Login />
-            </div>
-            <div>
                 <TopArtistsComponent />
             </div>
         </div>

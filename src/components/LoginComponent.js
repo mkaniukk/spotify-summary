@@ -5,7 +5,7 @@ function authenticateAPI () {
 
 }
 
-function Login(props){
+function LoginComponent(props){
    return (
       <div>
          <form method='get' action="/login">
@@ -15,4 +15,4 @@ function Login(props){
    )
 }
 
-export default Login 
+export default LoginComponent 
