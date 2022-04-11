@@ -3,27 +3,19 @@ import { Link } from "react-router-dom";
 import axios from 'axios';
 
 function TopArtists () {
-    const [data, setData] = React.useState([{}]);
+    const [artists, setArtists] = React.useState([{}]);
     console.log("top artists")
 
     useEffect(() => {
         console.log("Use effect");
         
-        // const fetchArtists = async () => {
-        //     const response = await axios.get('http://localhost:3000/artists').catch(err => console.log(err))
-        //     console.log(response);
-        //     setArtists(response.data).catch(err => console.log(err));
-        // }
-        // fetchArtists();
-        
         fetch('/artists')
         .then(res => {
-            console.log(res);
             return res.json()
         })
         .then(artists => {
             console.log(artists);
-            setData({data: artists})
+            setArtists(artists);
         })
         .catch(function(err){
             console.log('Error');
@@ -33,7 +25,20 @@ function TopArtists () {
 
     return (
         <div>
-            
+            <div class="page-header">
+                Your favourite artists:
+            </div>
+            <div>
+                {artists.map((artist) => (
+                    <div class="artist-element">
+                        <ol>
+                            {artist.name}, followers {artist?.followers?.total}, popularity {artist?.popularity}
+                        </ol>
+                        <img src={artist?.images?.pop()?.url} width="200"/>
+                    </div>
+                ))
+                }
+            </div>
         </div>
     );
 

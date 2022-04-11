@@ -20,7 +20,6 @@ const client_id = '26de0e4db2204b8fb4860589f4485263';
 const redirect_uri = 'http://localhost:3000/callback';
 const client_secret = '4e343703cfec4354a327cc82c1302fa4'; // Should be added to env. in the future
 var user_id = '';
-var artists = {}
 
 app.use(express.static(path.join(__dirname, 'build')));
 
@@ -175,7 +174,7 @@ app.get('/refresh_token', async (req, res) => {
         'access_token': access_token
       });
     }
-  });
+  }); 
   res.redirect('/')
 });
 
@@ -186,12 +185,13 @@ app.get('/refresh_token', async (req, res) => {
 //   }])
 // )
 
+const artists = require('./data/artists.json');
 app.get('/artists', async (req, res) => 
+res.status(200).json(artists)
   // res.json([{
   //   name:'Michal',
   //   id:'001'
   // }])
-  res.json(artists)
 )
 
 // module.exports = router;
