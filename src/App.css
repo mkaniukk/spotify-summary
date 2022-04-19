@@ -1,12 +1,12 @@
 .App {
   text-align: center;
-  background-color: rgb(50, 50, 50);
-  color: gray;
+  background-color: #575761;
+  color: #D3D4D9;
 }
 
 html, body {
-  background-color: rgb(50, 50, 50);
-  color: gray;
+  background-color: #575761;
+  color: #D3D4D9;
 }
 
 .App-logo {
@@ -15,7 +15,7 @@ html, body {
 }
 
 .App-header {
-  background-color: #282c34;
+  background-color: #D3D4D9;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -28,6 +28,44 @@ html, body {
 .App-link {
   color: lightblue;
   color: gray;
+}
+
+/* Add a black background color to the top navigation */
+.topnav {
+  background-color: #1DB954;
+  overflow: hidden;
+}
+
+/* Style the links inside the navigation bar */
+.topnav a {
+  float: left;
+  color: #D3D4D9;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+/* Change the color of links on hover */
+.topnav a:hover {
+  background-color: #D3D4D9;
+  color: black;
+}
+
+/* Add a color to the active/current link */
+.topnav a.active {
+  background-color: rgb(0, 120, 60);
+  color: white;
+}
+
+.topnav a.login {
+  background-color: #1098F7;
+  color: white;
+}
+
+/* Right-aligned section inside the top navigation */
+.topnav-right {
+  float: right;
 }
 
 li {
@@ -77,4 +115,22 @@ button {
   justify-content: center;
   text-align: center;
   margin: auto;
+}
+
+.container {
+  display: grid; 
+  grid-template-columns: 1fr 1fr; 
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr; 
+  gap: 0px 0px; 
+  grid-template-areas: 
+    ". ."
+    ". ."
+    ". ."
+    ". ."
+    ". ."
+    ". ."
+    ". ."
+    ". ."
+    ". ."
+    ". ."; 
 }

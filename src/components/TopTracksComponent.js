@@ -2,20 +2,20 @@ import React, { Component, useEffect, useState } from 'react';
 import { Link } from "react-router-dom";
 import axios from 'axios';
 
-function TopArtists () {
-    const [artists, setArtists] = React.useState([{}]);
-    console.log("top artists")
+function TopTracks () {
+    const [tracks, setTracks] = React.useState([{}]);
+    console.log("top tracks")
 
     useEffect(() => {
         console.log("Use effect");
         
-        fetch('/artists')
+        fetch('/tracks')
         .then(res => {
             return res.json()
         })
-        .then(artists => {
-            console.log(artists);
-            setArtists(artists);
+        .then(tracks => {
+            console.log(tracks);
+            setArtists(tracks);
         })
         .catch(function(err){
             console.log('Error');
@@ -26,15 +26,15 @@ function TopArtists () {
     return (
         <div>
             <div class="page-header">
-                Your favourite artists:
+                Your favourite tracks:
             </div>
             <div class="container">
-                {artists.map((artist) => (
+                {tracks.map((track) => (
                     <div class="artist-element">
                         <ol>
                             {artist.name}, followers {artist?.followers?.total}, popularity {artist?.popularity}
                         </ol>
-                        <img border-radius="20px" width="75%" src={artist?.images?.pop()?.url}/>
+                        <img src={artist?.images?.pop()?.url} width="200"/>
                     </div>
                 ))
                 }
@@ -44,4 +44,4 @@ function TopArtists () {
 
 }
 
-export default TopArtists;
+export default TopTracks;

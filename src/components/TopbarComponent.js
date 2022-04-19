@@ -1,12 +1,15 @@
 function Topbar () {
     
     return (
-        <ul>
-            <li><a href="/">Home</a></li>
-            <li><a href="/favourites">Favourites</a></li>
-            <li><a href="/settings">Settings</a></li>
-            <li><a href="/login">Log in</a></li>
-        </ul>
+        <div class="topnav">
+            <a class="active" href="/">Home</a>
+            <a href="/top-artists">Artists</a>
+            <a href="/top-tracks">Tracks</a>
+            <div class="topnav-right">
+                <a href="/settings">Settings</a>
+                <a class="login" href="/login">Log in</a>
+            </div>
+        </div>
     )
 }
 

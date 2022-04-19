@@ -24,12 +24,14 @@ var user_id = '';
 app.use(express.static(path.join(__dirname, 'build')));
 
 app.get('/', async (req, res) => {
- // console.log("Opening main page...")
   res.sendFile(path.join(__dirname, 'build', 'index.html'))
 });
 
+app.get('/top-artists', async(req, res) => {
+  res.redirect('/top-artists')
+})
+
 app.get('/login', async(req, res) => {
- // console.log("Opening login page...")
   var state = randomstring.generate(16);
   var scope = 'user-read-private user-read-email user-library-read user-top-read';
 
@@ -43,21 +45,16 @@ app.get('/login', async(req, res) => {
     }));
 });
 
-// Get callback
-
 app.get('/callback', async (req, res) => {
- // console.log("Open callback...")
   var code = req.query.code || null;
   var state = req.query.state || null;
 
   if (state === null) {
-   // console.log("State is null...")
     res.redirect('/#' +
       queryString.stringify({
         error: 'state_mismatch'
       }));
   } else {
-   // console.log("State is not null...")
     var authOptions = {
       url: 'https://accounts.spotify.com/api/token',
       form: {
@@ -95,16 +92,13 @@ app.get('/callback', async (req, res) => {
 
         // use the access token to access the Spotify Web API
         request.get(tracksOptions, async (error, response, body) => {
-         // console.log(body);
           for (let i in body.items) {
             console.log(body.items[i].name + " - " + body.items[i].artists[0].name);
             artists[body.items[i].name] = body.items[i].artists[0].name;
           };
-          //console.log(body.items)
           var data = JSON.stringify(body.items);
           fs.writeFileSync('data/tracks.json', data, (err) => {
             if (err) throw err;
-           // console.log('Data written to file')
           })
           
         });
@@ -117,16 +111,12 @@ app.get('/callback', async (req, res) => {
 
         // use the access token to access the Spotify Web API
         request.get(artitstsOptions, async (error, response, body) => {
-         // console.log(artitstsOptions);
           for (let i in body.items) {
-            //console.log(body.items[i].name);
             localStorage.setItem(toString(i), body.items[i].name)
           };
-          //console.log(body.items)
           var data = JSON.stringify(body.items);
           fs.writeFileSync('data/artists.json', data, (err) => {
-          if (err) throw err;
-           // console.log('Data written to file')
+            if (err) throw err;
           })
           
         });
@@ -153,7 +143,6 @@ app.get('/callback', async (req, res) => {
 // Refresh token
 
 app.get('/refresh_token', async (req, res) => {
- // console.log("Open refresh token...")
   var refresh_token = req.query.refresh_token;
   var authOptions = {
     url: 'https://accounts.spotify.com/api/token',
@@ -166,8 +155,6 @@ app.get('/refresh_token', async (req, res) => {
   };
 
   request.post(authOptions, async (error, response, body) => {
-    //console.log(body)
-   // console.log(response.statusCode)
     if (!error && response.statusCode === 200) {
       var access_token = body.access_token;
       res.send({
@@ -178,23 +165,10 @@ app.get('/refresh_token', async (req, res) => {
   res.redirect('/')
 });
 
-// router.get('/artists', async (req, res) => 
-//   res.json([{
-//     name:'Michal',
-//     id:'001'
-//   }])
-// )
-
 const artists = require('./data/artists.json');
 app.get('/artists', async (req, res) => 
-res.status(200).json(artists)
-  // res.json([{
-  //   name:'Michal',
-  //   id:'001'
-  // }])
+  res.status(200).json(artists)
 )
-
-// module.exports = router;
 
 app.listen(3000, () => {
   console.log("server is runnig on port 3000...");
