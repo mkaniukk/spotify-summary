@@ -2,7 +2,7 @@ import React, { Component, useEffect, useState } from 'react';
 import { Link } from "react-router-dom";
 import axios from 'axios';
 
-function TopArtists () {
+function Artists () {
     const [artists, setArtists] = React.useState([{}]);
     console.log("top artists")
 
@@ -44,4 +44,4 @@ function TopArtists () {
 
 }
 
-export default TopArtists;
+export default Artists;

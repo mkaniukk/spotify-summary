@@ -27,8 +27,10 @@ app.get('/', async (req, res) => {
   res.sendFile(path.join(__dirname, 'build', 'index.html'))
 });
 
-app.get('/top-artists', async(req, res) => {
-  res.redirect('/top-artists')
+app.get("/lyrics", async (req, res) => {
+  const { artist, track } = req.query
+  const lyrics = (await lyricsFinder(artist, track)) || "No Lyrics Found"
+  res.json({ lyrics })
 })
 
 app.get('/login', async(req, res) => {
