@@ -2,6 +2,7 @@
   text-align: center;
   background-color: #575761;
   color: #D3D4D9;
+  font-family: 'Times New Roman', Times, serif;
 }
 
 html, body {
@@ -30,7 +31,7 @@ html, body {
   color: gray;
 }
 
-/* Add a black background color to the top navigation */
+/* Add a background color to the top navigation */
 .topnav {
   background-color: #1DB954;
   overflow: hidden;
@@ -39,7 +40,7 @@ html, body {
 /* Style the links inside the navigation bar */
 .topnav a {
   float: left;
-  color: #D3D4D9;
+  color: #ffffff;
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
@@ -106,9 +107,31 @@ button {
 }
 
 .artist-element {
-  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
   text-align: center;
   margin: auto;
+  width: min(45vw, 300px);
+  height: min(60vw, 450px);
+  border: 5px solid #D3D4D9;
+  background-color: #1098F7;
+}
+
+.artist-name {
+  font-size: min(4vw, 30px);
+  text-transform: uppercase;
+}
+
+.artist-description {
+  font-size: min(3vw, 20px);
+  display: flex;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  vertical-align: text-bottom;
+  text-transform: uppercase;
 }
 
 .page-header {
@@ -117,11 +140,20 @@ button {
   margin: auto;
 }
 
+img {
+  border-radius: 50%;
+  width: min(25vw, 250px);
+  height: min(25vw, 250px);
+  justify-content: center;
+  position: relative;
+  align-items: center;
+  border: 10px solid #D3D4D9;
+}
+
 .container {
   display: grid; 
-  grid-template-columns: 1fr 1fr; 
-  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr; 
-  gap: 0px 0px; 
+  grid-template-columns: repeat(auto-fit, minmax(min(45vw, 300px), 1fr));
+  gap: min(5vw, 20px) min(5vw, 20px); 
   grid-template-areas: 
     ". ."
     ". ."

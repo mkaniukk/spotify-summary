@@ -5,6 +5,10 @@ import axios from 'axios';
 function TopTracks () {
     const [tracks, setTracks] = React.useState([{}]);
     console.log("top tracks")
+    
+    const createChart=(data)=>{
+        
+    }
 
     useEffect(() => {
         console.log("Use effect");
@@ -38,6 +42,9 @@ function TopTracks () {
                     </div>
                 ))
                 }
+            </div>
+            <div>
+
             </div>
         </div>
     );
