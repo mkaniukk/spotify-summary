@@ -112,11 +112,15 @@ button {
   align-items: center;
   justify-content: space-between;
   text-align: center;
+  color: black;
   margin: auto;
   width: min(45vw, 300px);
   height: min(60vw, 450px);
-  border: 5px solid #D3D4D9;
+  border-radius: 10%;
   background-color: #1098F7;
+  opacity: 1;
+  transition: opacity 500ms ease-in;
+  background-size: cover;
 }
 
 .artist-name {
@@ -147,7 +151,6 @@ img {
   justify-content: center;
   position: relative;
   align-items: center;
-  border: 10px solid #D3D4D9;
 }
 
 .container {

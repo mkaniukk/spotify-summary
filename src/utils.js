@@ -1,5 +1,4 @@
 function NumFormatter(num) {
-    console.log("Format number")
     if(num > 999 && num < 1000000){
         return (num/1000).toFixed(1) + 'K'; // convert to K for number from > 1000 < 1 million 
     }else if(num > 1000000){

@@ -168,7 +168,7 @@ app.get('/refresh_token', async (req, res) => {
 });
 
 const artists = require('./data/artists.json');
-app.get('/artists', async (req, res) => 
+app.get('/top-artists', async (req, res) => 
   res.status(200).json(artists)
 )
 
