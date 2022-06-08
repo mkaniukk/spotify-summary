@@ -1,1 +1,732 @@
-[{"external_urls":{"spotify":"https://open.spotify.com/artist/0Vw76uk7P8yVtTClWyOhac"},"followers":{"href":null,"total":1363165},"genres":["pop","uk pop"],"href":"https://api.spotify.com/v1/artists/0Vw76uk7P8yVtTClWyOhac","id":"0Vw76uk7P8yVtTClWyOhac","images":[{"height":640,"url":"https://i.scdn.co/image/ab6761610000e5ebe1b208b540b1419be505c696","width":640},{"height":320,"url":"https://i.scdn.co/image/ab67616100005174e1b208b540b1419be505c696","width":320},{"height":160,"url":"https://i.scdn.co/image/ab6761610000f178e1b208b540b1419be505c696","width":160}],"name":"HONNE","popularity":72,"type":"artist","uri":"spotify:artist:0Vw76uk7P8yVtTClWyOhac"},{"external_urls":{"spotify":"https://open.spotify.com/artist/3Bd1cgCjtCI32PYvDC3ynO"},"followers":{"href":null,"total":1339481},"genres":["metropopolis","nottingham indie"],"href":"https://api.spotify.com/v1/artists/3Bd1cgCjtCI32PYvDC3ynO","id":"3Bd1cgCjtCI32PYvDC3ynO","images":[{"height":640,"url":"https://i.scdn.co/image/ab6761610000e5eb5cdc6c97f01c4d7b786d1e76","width":640},{"height":320,"url":"https://i.scdn.co/image/ab676161000051745cdc6c97f01c4d7b786d1e76","width":320},{"height":160,"url":"https://i.scdn.co/image/ab6761610000f1785cdc6c97f01c4d7b786d1e76","width":160}],"name":"London Grammar","popularity":69,"type":"artist","uri":"spotify:artist:3Bd1cgCjtCI32PYvDC3ynO"},{"external_urls":{"spotify":"https://open.spotify.com/artist/7zrkALJ9ayRjzysp4QYoEg"},"followers":{"href":null,"total":286053},"genres":["electronica","future garage","indie soul"],"href":"https://api.spotify.com/v1/artists/7zrkALJ9ayRjzysp4QYoEg","id":"7zrkALJ9ayRjzysp4QYoEg","images":[{"height":640,"url":"https://i.scdn.co/image/ab6761610000e5eb891e2c688e41fa8d36b77175","width":640},{"height":320,"url":"https://i.scdn.co/image/ab67616100005174891e2c688e41fa8d36b77175","width":320},{"height":160,"url":"https://i.scdn.co/image/ab6761610000f178891e2c688e41fa8d36b77175","width":160}],"name":"Maribou State","popularity":67,"type":"artist","uri":"spotify:artist:7zrkALJ9ayRjzysp4QYoEg"},{"external_urls":{"spotify":"https://open.spotify.com/artist/3ClL18AtCAPwXVT6mUkBDN"},"followers":{"href":null,"total":41999},"genres":["polish pop"],"href":"https://api.spotify.com/v1/artists/3ClL18AtCAPwXVT6mUkBDN","id":"3ClL18AtCAPwXVT6mUkBDN","images":[{"height":640,"url":"https://i.scdn.co/image/ab6761610000e5eb193c30d0f5c3f9ce268f790b","width":640},{"height":320,"url":"https://i.scdn.co/image/ab67616100005174193c30d0f5c3f9ce268f790b","width":320},{"height":160,"url":"https://i.scdn.co/image/ab6761610000f178193c30d0f5c3f9ce268f790b","width":160}],"name":"Kaśka Sochacka","popularity":57,"type":"artist","uri":"spotify:artist:3ClL18AtCAPwXVT6mUkBDN"},{"external_urls":{"spotify":"https://open.spotify.com/artist/0MIG6gMcQTSvFbKvUwK0id"},"followers":{"href":null,"total":1231725},"genres":["polish hip hop","polish trap"],"href":"https://api.spotify.com/v1/artists/0MIG6gMcQTSvFbKvUwK0id","id":"0MIG6gMcQTSvFbKvUwK0id","images":[{"height":640,"url":"https://i.scdn.co/image/ab6761610000e5eb35cd33bcccc998abb5a833d7","width":640},{"height":320,"url":"https://i.scdn.co/image/ab6761610000517435cd33bcccc998abb5a833d7","width":320},{"height":160,"url":"https://i.scdn.co/image/ab6761610000f17835cd33bcccc998abb5a833d7","width":160}],"name":"Mata","popularity":74,"type":"artist","uri":"spotify:artist:0MIG6gMcQTSvFbKvUwK0id"},{"external_urls":{"spotify":"https://open.spotify.com/artist/1ZAGaCgMaOtt2yOUm1Qq6x"},"followers":{"href":null,"total":16612},"genres":["polish alternative","polish pop"],"href":"https://api.spotify.com/v1/artists/1ZAGaCgMaOtt2yOUm1Qq6x","id":"1ZAGaCgMaOtt2yOUm1Qq6x","images":[{"height":640,"url":"https://i.scdn.co/image/ab6761610000e5eb5aa52a0725bafb22d700c366","width":640},{"height":320,"url":"https://i.scdn.co/image/ab676161000051745aa52a0725bafb22d700c366","width":320},{"height":160,"url":"https://i.scdn.co/image/ab6761610000f1785aa52a0725bafb22d700c366","width":160}],"name":"KARAŚ/ROGUCKI","popularity":46,"type":"artist","uri":"spotify:artist:1ZAGaCgMaOtt2yOUm1Qq6x"},{"external_urls":{"spotify":"https://open.spotify.com/artist/5cIc3SBFuBLVxJz58W2tU9"},"followers":{"href":null,"total":1026315},"genres":["electropop","indie poptimism","modern rock","pop","pop rock"],"href":"https://api.spotify.com/v1/artists/5cIc3SBFuBLVxJz58W2tU9","id":"5cIc3SBFuBLVxJz58W2tU9","images":[{"height":640,"url":"https://i.scdn.co/image/ab6761610000e5eb269dc6a0f88d0b4db4e19dd9","width":640},{"height":320,"url":"https://i.scdn.co/image/ab67616100005174269dc6a0f88d0b4db4e19dd9","width":320},{"height":160,"url":"https://i.scdn.co/image/ab6761610000f178269dc6a0f88d0b4db4e19dd9","width":160}],"name":"Oh Wonder","popularity":73,"type":"artist","uri":"spotify:artist:5cIc3SBFuBLVxJz58W2tU9"},{"external_urls":{"spotify":"https://open.spotify.com/artist/6qqNVTkY8uBg9cP3Jd7DAH"},"followers":{"href":null,"total":59630676},"genres":["art pop","electropop","pop"],"href":"https://api.spotify.com/v1/artists/6qqNVTkY8uBg9cP3Jd7DAH","id":"6qqNVTkY8uBg9cP3Jd7DAH","images":[{"height":640,"url":"https://i.scdn.co/image/ab6761610000e5ebd8b9980db67272cb4d2c3daf","width":640},{"height":320,"url":"https://i.scdn.co/image/ab67616100005174d8b9980db67272cb4d2c3daf","width":320},{"height":160,"url":"https://i.scdn.co/image/ab6761610000f178d8b9980db67272cb4d2c3daf","width":160}],"name":"Billie Eilish","popularity":92,"type":"artist","uri":"spotify:artist:6qqNVTkY8uBg9cP3Jd7DAH"},{"external_urls":{"spotify":"https://open.spotify.com/artist/6M2wZ9GZgrQXHCFfjv46we"},"followers":{"href":null,"total":33064178},"genres":["dance pop","pop","uk pop"],"href":"https://api.spotify.com/v1/artists/6M2wZ9GZgrQXHCFfjv46we","id":"6M2wZ9GZgrQXHCFfjv46we","images":[{"height":640,"url":"https://i.scdn.co/image/ab6761610000e5ebd42a27db3286b58553da8858","width":640},{"height":320,"url":"https://i.scdn.co/image/ab67616100005174d42a27db3286b58553da8858","width":320},{"height":160,"url":"https://i.scdn.co/image/ab6761610000f178d42a27db3286b58553da8858","width":160}],"name":"Dua Lipa","popularity":94,"type":"artist","uri":"spotify:artist:6M2wZ9GZgrQXHCFfjv46we"},{"external_urls":{"spotify":"https://open.spotify.com/artist/2DhJauCHKgwVilZO9A8og3"},"followers":{"href":null,"total":120236},"genres":["polish alternative","polish pop"],"href":"https://api.spotify.com/v1/artists/2DhJauCHKgwVilZO9A8og3","id":"2DhJauCHKgwVilZO9A8og3","images":[{"height":640,"url":"https://i.scdn.co/image/ab6761610000e5eb58543759b560982394184679","width":640},{"height":320,"url":"https://i.scdn.co/image/ab6761610000517458543759b560982394184679","width":320},{"height":160,"url":"https://i.scdn.co/image/ab6761610000f17858543759b560982394184679","width":160}],"name":"Natalia Szroeder","popularity":55,"type":"artist","uri":"spotify:artist:2DhJauCHKgwVilZO9A8og3"},{"external_urls":{"spotify":"https://open.spotify.com/artist/6AyATGg7mDgBlZ4N5uNog0"},"followers":{"href":null,"total":487246},"genres":["pop"],"href":"https://api.spotify.com/v1/artists/6AyATGg7mDgBlZ4N5uNog0","id":"6AyATGg7mDgBlZ4N5uNog0","images":[{"height":640,"url":"https://i.scdn.co/image/ab6761610000e5eb28604f85f8931cc4cfad2772","width":640},{"height":320,"url":"https://i.scdn.co/image/ab6761610000517428604f85f8931cc4cfad2772","width":320},{"height":160,"url":"https://i.scdn.co/image/ab6761610000f17828604f85f8931cc4cfad2772","width":160}],"name":"SYML","popularity":74,"type":"artist","uri":"spotify:artist:6AyATGg7mDgBlZ4N5uNog0"},{"external_urls":{"spotify":"https://open.spotify.com/artist/7JFi4ROpWvJU9ZMmHn8Yp5"},"followers":{"href":null,"total":83048},"genres":["polish alternative","polish pop"],"href":"https://api.spotify.com/v1/artists/7JFi4ROpWvJU9ZMmHn8Yp5","id":"7JFi4ROpWvJU9ZMmHn8Yp5","images":[{"height":640,"url":"https://i.scdn.co/image/ab6761610000e5eba09657c64a49f98e4633fbe0","width":640},{"height":320,"url":"https://i.scdn.co/image/ab67616100005174a09657c64a49f98e4633fbe0","width":320},{"height":160,"url":"https://i.scdn.co/image/ab6761610000f178a09657c64a49f98e4633fbe0","width":160}],"name":"Mikromusic","popularity":47,"type":"artist","uri":"spotify:artist:7JFi4ROpWvJU9ZMmHn8Yp5"},{"external_urls":{"spotify":"https://open.spotify.com/artist/53l3yjX8ITilPIlCRsVKEB"},"followers":{"href":null,"total":174377},"genres":["polish alternative","polish pop"],"href":"https://api.spotify.com/v1/artists/53l3yjX8ITilPIlCRsVKEB","id":"53l3yjX8ITilPIlCRsVKEB","images":[{"height":640,"url":"https://i.scdn.co/image/ab6761610000e5ebc93f238813a2e0e7aefe84a2","width":640},{"height":320,"url":"https://i.scdn.co/image/ab67616100005174c93f238813a2e0e7aefe84a2","width":320},{"height":160,"url":"https://i.scdn.co/image/ab6761610000f178c93f238813a2e0e7aefe84a2","width":160}],"name":"Kwiat Jabłoni","popularity":64,"type":"artist","uri":"spotify:artist:53l3yjX8ITilPIlCRsVKEB"},{"external_urls":{"spotify":"https://open.spotify.com/artist/37M5pPGs6V1fchFJSgCguX"},"followers":{"href":null,"total":1604045},"genres":["alt z","electropop","la indie","pop"],"href":"https://api.spotify.com/v1/artists/37M5pPGs6V1fchFJSgCguX","id":"37M5pPGs6V1fchFJSgCguX","images":[{"height":640,"url":"https://i.scdn.co/image/ab6761610000e5eb998074cb12f4ad443434d82a","width":640},{"height":320,"url":"https://i.scdn.co/image/ab67616100005174998074cb12f4ad443434d82a","width":320},{"height":160,"url":"https://i.scdn.co/image/ab6761610000f178998074cb12f4ad443434d82a","width":160}],"name":"FINNEAS","popularity":75,"type":"artist","uri":"spotify:artist:37M5pPGs6V1fchFJSgCguX"},{"external_urls":{"spotify":"https://open.spotify.com/artist/26dSoYclwsYLMAKD3tpOr4"},"followers":{"href":null,"total":10648771},"genres":["dance pop","pop","post-teen pop"],"href":"https://api.spotify.com/v1/artists/26dSoYclwsYLMAKD3tpOr4","id":"26dSoYclwsYLMAKD3tpOr4","images":[{"height":640,"url":"https://i.scdn.co/image/ab6761610000e5ebf2ac13247b26025069dbdc4e","width":640},{"height":320,"url":"https://i.scdn.co/image/ab67616100005174f2ac13247b26025069dbdc4e","width":320},{"height":160,"url":"https://i.scdn.co/image/ab6761610000f178f2ac13247b26025069dbdc4e","width":160}],"name":"Britney Spears","popularity":84,"type":"artist","uri":"spotify:artist:26dSoYclwsYLMAKD3tpOr4"},{"external_urls":{"spotify":"https://open.spotify.com/artist/6EB8VE9f7Ut6NOgviN6gDW"},"followers":{"href":null,"total":1441664},"genres":["polish alternative","polish pop","talent show"],"href":"https://api.spotify.com/v1/artists/6EB8VE9f7Ut6NOgviN6gDW","id":"6EB8VE9f7Ut6NOgviN6gDW","images":[{"height":640,"url":"https://i.scdn.co/image/ab6761610000e5eb26a1d935d288dc8f0809c465","width":640},{"height":320,"url":"https://i.scdn.co/image/ab6761610000517426a1d935d288dc8f0809c465","width":320},{"height":160,"url":"https://i.scdn.co/image/ab6761610000f17826a1d935d288dc8f0809c465","width":160}],"name":"Dawid Podsiadło","popularity":67,"type":"artist","uri":"spotify:artist:6EB8VE9f7Ut6NOgviN6gDW"},{"external_urls":{"spotify":"https://open.spotify.com/artist/1fxbULcd6ryMNc1usHoP0R"},"followers":{"href":null,"total":1176947},"genres":["polish hip hop"],"href":"https://api.spotify.com/v1/artists/1fxbULcd6ryMNc1usHoP0R","id":"1fxbULcd6ryMNc1usHoP0R","images":[{"height":640,"url":"https://i.scdn.co/image/ab6761610000e5ebaf2ca1b60e2af011f4795f0a","width":640},{"height":320,"url":"https://i.scdn.co/image/ab67616100005174af2ca1b60e2af011f4795f0a","width":320},{"height":160,"url":"https://i.scdn.co/image/ab6761610000f178af2ca1b60e2af011f4795f0a","width":160}],"name":"Quebonafide","popularity":69,"type":"artist","uri":"spotify:artist:1fxbULcd6ryMNc1usHoP0R"},{"external_urls":{"spotify":"https://open.spotify.com/artist/5WUlDfRSoLAfcVSX1WnrxN"},"followers":{"href":null,"total":22789681},"genres":["australian dance","australian pop","pop"],"href":"https://api.spotify.com/v1/artists/5WUlDfRSoLAfcVSX1WnrxN","id":"5WUlDfRSoLAfcVSX1WnrxN","images":[{"height":640,"url":"https://i.scdn.co/image/ab6761610000e5ebe8637c96a7aa2917eae3c54d","width":640},{"height":320,"url":"https://i.scdn.co/image/ab67616100005174e8637c96a7aa2917eae3c54d","width":320},{"height":160,"url":"https://i.scdn.co/image/ab6761610000f178e8637c96a7aa2917eae3c54d","width":160}],"name":"Sia","popularity":88,"type":"artist","uri":"spotify:artist:5WUlDfRSoLAfcVSX1WnrxN"},{"external_urls":{"spotify":"https://open.spotify.com/artist/1vCWHaC5f2uS3yhpwWbIA6"},"followers":{"href":null,"total":21543845},"genres":["dance pop","edm","pop","pop dance"],"href":"https://api.spotify.com/v1/artists/1vCWHaC5f2uS3yhpwWbIA6","id":"1vCWHaC5f2uS3yhpwWbIA6","images":[{"height":640,"url":"https://i.scdn.co/image/ab6761610000e5eb09bf4814c6585e1f69dfeef7","width":640},{"height":320,"url":"https://i.scdn.co/image/ab6761610000517409bf4814c6585e1f69dfeef7","width":320},{"height":160,"url":"https://i.scdn.co/image/ab6761610000f17809bf4814c6585e1f69dfeef7","width":160}],"name":"Avicii","popularity":85,"type":"artist","uri":"spotify:artist:1vCWHaC5f2uS3yhpwWbIA6"},{"external_urls":{"spotify":"https://open.spotify.com/artist/5xoXMR6Y8PORwObvyND9ZE"},"followers":{"href":null,"total":104713},"genres":["polish alternative","polish pop"],"href":"https://api.spotify.com/v1/artists/5xoXMR6Y8PORwObvyND9ZE","id":"5xoXMR6Y8PORwObvyND9ZE","images":[{"height":640,"url":"https://i.scdn.co/image/ab6761610000e5eba640e900047e98da85960294","width":640},{"height":320,"url":"https://i.scdn.co/image/ab67616100005174a640e900047e98da85960294","width":320},{"height":160,"url":"https://i.scdn.co/image/ab6761610000f178a640e900047e98da85960294","width":160}],"name":"Męskie Granie Orkiestra 2021","popularity":60,"type":"artist","uri":"spotify:artist:5xoXMR6Y8PORwObvyND9ZE"}]
+[
+    {
+        "external_urls": {
+            "spotify": "https://open.spotify.com/artist/0Vw76uk7P8yVtTClWyOhac"
+        },
+        "followers": {
+            "href": null,
+            "total": 1363165
+        },
+        "genres": [
+            "pop",
+            "uk pop"
+        ],
+        "href": "https://api.spotify.com/v1/artists/0Vw76uk7P8yVtTClWyOhac",
+        "id": "0Vw76uk7P8yVtTClWyOhac",
+        "images": [
+            {
+                "height": 640,
+                "url": "https://i.scdn.co/image/ab6761610000e5ebe1b208b540b1419be505c696",
+                "width": 640
+            },
+            {
+                "height": 320,
+                "url": "https://i.scdn.co/image/ab67616100005174e1b208b540b1419be505c696",
+                "width": 320
+            },
+            {
+                "height": 160,
+                "url": "https://i.scdn.co/image/ab6761610000f178e1b208b540b1419be505c696",
+                "width": 160
+            }
+        ],
+        "name": "HONNE",
+        "popularity": 72,
+        "type": "artist",
+        "uri": "spotify:artist:0Vw76uk7P8yVtTClWyOhac"
+    },
+    {
+        "external_urls": {
+            "spotify": "https://open.spotify.com/artist/3Bd1cgCjtCI32PYvDC3ynO"
+        },
+        "followers": {
+            "href": null,
+            "total": 1339481
+        },
+        "genres": [
+            "metropopolis",
+            "nottingham indie"
+        ],
+        "href": "https://api.spotify.com/v1/artists/3Bd1cgCjtCI32PYvDC3ynO",
+        "id": "3Bd1cgCjtCI32PYvDC3ynO",
+        "images": [
+            {
+                "height": 640,
+                "url": "https://i.scdn.co/image/ab6761610000e5eb5cdc6c97f01c4d7b786d1e76",
+                "width": 640
+            },
+            {
+                "height": 320,
+                "url": "https://i.scdn.co/image/ab676161000051745cdc6c97f01c4d7b786d1e76",
+                "width": 320
+            },
+            {
+                "height": 160,
+                "url": "https://i.scdn.co/image/ab6761610000f1785cdc6c97f01c4d7b786d1e76",
+                "width": 160
+            }
+        ],
+        "name": "London Grammar",
+        "popularity": 69,
+        "type": "artist",
+        "uri": "spotify:artist:3Bd1cgCjtCI32PYvDC3ynO"
+    },
+    {
+        "external_urls": {
+            "spotify": "https://open.spotify.com/artist/7zrkALJ9ayRjzysp4QYoEg"
+        },
+        "followers": {
+            "href": null,
+            "total": 286053
+        },
+        "genres": [
+            "electronica",
+            "future garage",
+            "indie soul"
+        ],
+        "href": "https://api.spotify.com/v1/artists/7zrkALJ9ayRjzysp4QYoEg",
+        "id": "7zrkALJ9ayRjzysp4QYoEg",
+        "images": [
+            {
+                "height": 640,
+                "url": "https://i.scdn.co/image/ab6761610000e5eb891e2c688e41fa8d36b77175",
+                "width": 640
+            },
+            {
+                "height": 320,
+                "url": "https://i.scdn.co/image/ab67616100005174891e2c688e41fa8d36b77175",
+                "width": 320
+            },
+            {
+                "height": 160,
+                "url": "https://i.scdn.co/image/ab6761610000f178891e2c688e41fa8d36b77175",
+                "width": 160
+            }
+        ],
+        "name": "Maribou State",
+        "popularity": 67,
+        "type": "artist",
+        "uri": "spotify:artist:7zrkALJ9ayRjzysp4QYoEg"
+    },
+    {
+        "external_urls": {
+            "spotify": "https://open.spotify.com/artist/3ClL18AtCAPwXVT6mUkBDN"
+        },
+        "followers": {
+            "href": null,
+            "total": 41999
+        },
+        "genres": [
+            "polish pop"
+        ],
+        "href": "https://api.spotify.com/v1/artists/3ClL18AtCAPwXVT6mUkBDN",
+        "id": "3ClL18AtCAPwXVT6mUkBDN",
+        "images": [
+            {
+                "height": 640,
+                "url": "https://i.scdn.co/image/ab6761610000e5eb193c30d0f5c3f9ce268f790b",
+                "width": 640
+            },
+            {
+                "height": 320,
+                "url": "https://i.scdn.co/image/ab67616100005174193c30d0f5c3f9ce268f790b",
+                "width": 320
+            },
+            {
+                "height": 160,
+                "url": "https://i.scdn.co/image/ab6761610000f178193c30d0f5c3f9ce268f790b",
+                "width": 160
+            }
+        ],
+        "name": "Kaśka Sochacka",
+        "popularity": 57,
+        "type": "artist",
+        "uri": "spotify:artist:3ClL18AtCAPwXVT6mUkBDN"
+    },
+    {
+        "external_urls": {
+            "spotify": "https://open.spotify.com/artist/0MIG6gMcQTSvFbKvUwK0id"
+        },
+        "followers": {
+            "href": null,
+            "total": 1231725
+        },
+        "genres": [
+            "polish hip hop",
+            "polish trap"
+        ],
+        "href": "https://api.spotify.com/v1/artists/0MIG6gMcQTSvFbKvUwK0id",
+        "id": "0MIG6gMcQTSvFbKvUwK0id",
+        "images": [
+            {
+                "height": 640,
+                "url": "https://i.scdn.co/image/ab6761610000e5eb35cd33bcccc998abb5a833d7",
+                "width": 640
+            },
+            {
+                "height": 320,
+                "url": "https://i.scdn.co/image/ab6761610000517435cd33bcccc998abb5a833d7",
+                "width": 320
+            },
+            {
+                "height": 160,
+                "url": "https://i.scdn.co/image/ab6761610000f17835cd33bcccc998abb5a833d7",
+                "width": 160
+            }
+        ],
+        "name": "Mata",
+        "popularity": 74,
+        "type": "artist",
+        "uri": "spotify:artist:0MIG6gMcQTSvFbKvUwK0id"
+    },
+    {
+        "external_urls": {
+            "spotify": "https://open.spotify.com/artist/1ZAGaCgMaOtt2yOUm1Qq6x"
+        },
+        "followers": {
+            "href": null,
+            "total": 16612
+        },
+        "genres": [
+            "polish alternative",
+            "polish pop"
+        ],
+        "href": "https://api.spotify.com/v1/artists/1ZAGaCgMaOtt2yOUm1Qq6x",
+        "id": "1ZAGaCgMaOtt2yOUm1Qq6x",
+        "images": [
+            {
+                "height": 640,
+                "url": "https://i.scdn.co/image/ab6761610000e5eb5aa52a0725bafb22d700c366",
+                "width": 640
+            },
+            {
+                "height": 320,
+                "url": "https://i.scdn.co/image/ab676161000051745aa52a0725bafb22d700c366",
+                "width": 320
+            },
+            {
+                "height": 160,
+                "url": "https://i.scdn.co/image/ab6761610000f1785aa52a0725bafb22d700c366",
+                "width": 160
+            }
+        ],
+        "name": "KARAŚ/ROGUCKI",
+        "popularity": 46,
+        "type": "artist",
+        "uri": "spotify:artist:1ZAGaCgMaOtt2yOUm1Qq6x"
+    },
+    {
+        "external_urls": {
+            "spotify": "https://open.spotify.com/artist/5cIc3SBFuBLVxJz58W2tU9"
+        },
+        "followers": {
+            "href": null,
+            "total": 1026315
+        },
+        "genres": [
+            "electropop",
+            "indie poptimism",
+            "modern rock",
+            "pop",
+            "pop rock"
+        ],
+        "href": "https://api.spotify.com/v1/artists/5cIc3SBFuBLVxJz58W2tU9",
+        "id": "5cIc3SBFuBLVxJz58W2tU9",
+        "images": [
+            {
+                "height": 640,
+                "url": "https://i.scdn.co/image/ab6761610000e5eb269dc6a0f88d0b4db4e19dd9",
+                "width": 640
+            },
+            {
+                "height": 320,
+                "url": "https://i.scdn.co/image/ab67616100005174269dc6a0f88d0b4db4e19dd9",
+                "width": 320
+            },
+            {
+                "height": 160,
+                "url": "https://i.scdn.co/image/ab6761610000f178269dc6a0f88d0b4db4e19dd9",
+                "width": 160
+            }
+        ],
+        "name": "Oh Wonder",
+        "popularity": 73,
+        "type": "artist",
+        "uri": "spotify:artist:5cIc3SBFuBLVxJz58W2tU9"
+    },
+    {
+        "external_urls": {
+            "spotify": "https://open.spotify.com/artist/6qqNVTkY8uBg9cP3Jd7DAH"
+        },
+        "followers": {
+            "href": null,
+            "total": 59630676
+        },
+        "genres": [
+            "art pop",
+            "electropop",
+            "pop"
+        ],
+        "href": "https://api.spotify.com/v1/artists/6qqNVTkY8uBg9cP3Jd7DAH",
+        "id": "6qqNVTkY8uBg9cP3Jd7DAH",
+        "images": [
+            {
+                "height": 640,
+                "url": "https://i.scdn.co/image/ab6761610000e5ebd8b9980db67272cb4d2c3daf",
+                "width": 640
+            },
+            {
+                "height": 320,
+                "url": "https://i.scdn.co/image/ab67616100005174d8b9980db67272cb4d2c3daf",
+                "width": 320
+            },
+            {
+                "height": 160,
+                "url": "https://i.scdn.co/image/ab6761610000f178d8b9980db67272cb4d2c3daf",
+                "width": 160
+            }
+        ],
+        "name": "Billie Eilish",
+        "popularity": 92,
+        "type": "artist",
+        "uri": "spotify:artist:6qqNVTkY8uBg9cP3Jd7DAH"
+    },
+    {
+        "external_urls": {
+            "spotify": "https://open.spotify.com/artist/6M2wZ9GZgrQXHCFfjv46we"
+        },
+        "followers": {
+            "href": null,
+            "total": 33064178
+        },
+        "genres": [
+            "dance pop",
+            "pop",
+            "uk pop"
+        ],
+        "href": "https://api.spotify.com/v1/artists/6M2wZ9GZgrQXHCFfjv46we",
+        "id": "6M2wZ9GZgrQXHCFfjv46we",
+        "images": [
+            {
+                "height": 640,
+                "url": "https://i.scdn.co/image/ab6761610000e5ebd42a27db3286b58553da8858",
+                "width": 640
+            },
+            {
+                "height": 320,
+                "url": "https://i.scdn.co/image/ab67616100005174d42a27db3286b58553da8858",
+                "width": 320
+            },
+            {
+                "height": 160,
+                "url": "https://i.scdn.co/image/ab6761610000f178d42a27db3286b58553da8858",
+                "width": 160
+            }
+        ],
+        "name": "Dua Lipa",
+        "popularity": 94,
+        "type": "artist",
+        "uri": "spotify:artist:6M2wZ9GZgrQXHCFfjv46we"
+    },
+    {
+        "external_urls": {
+            "spotify": "https://open.spotify.com/artist/2DhJauCHKgwVilZO9A8og3"
+        },
+        "followers": {
+            "href": null,
+            "total": 120236
+        },
+        "genres": [
+            "polish alternative",
+            "polish pop"
+        ],
+        "href": "https://api.spotify.com/v1/artists/2DhJauCHKgwVilZO9A8og3",
+        "id": "2DhJauCHKgwVilZO9A8og3",
+        "images": [
+            {
+                "height": 640,
+                "url": "https://i.scdn.co/image/ab6761610000e5eb58543759b560982394184679",
+                "width": 640
+            },
+            {
+                "height": 320,
+                "url": "https://i.scdn.co/image/ab6761610000517458543759b560982394184679",
+                "width": 320
+            },
+            {
+                "height": 160,
+                "url": "https://i.scdn.co/image/ab6761610000f17858543759b560982394184679",
+                "width": 160
+            }
+        ],
+        "name": "Natalia Szroeder",
+        "popularity": 55,
+        "type": "artist",
+        "uri": "spotify:artist:2DhJauCHKgwVilZO9A8og3"
+    },
+    {
+        "external_urls": {
+            "spotify": "https://open.spotify.com/artist/6AyATGg7mDgBlZ4N5uNog0"
+        },
+        "followers": {
+            "href": null,
+            "total": 487246
+        },
+        "genres": [
+            "pop"
+        ],
+        "href": "https://api.spotify.com/v1/artists/6AyATGg7mDgBlZ4N5uNog0",
+        "id": "6AyATGg7mDgBlZ4N5uNog0",
+        "images": [
+            {
+                "height": 640,
+                "url": "https://i.scdn.co/image/ab6761610000e5eb28604f85f8931cc4cfad2772",
+                "width": 640
+            },
+            {
+                "height": 320,
+                "url": "https://i.scdn.co/image/ab6761610000517428604f85f8931cc4cfad2772",
+                "width": 320
+            },
+            {
+                "height": 160,
+                "url": "https://i.scdn.co/image/ab6761610000f17828604f85f8931cc4cfad2772",
+                "width": 160
+            }
+        ],
+        "name": "SYML",
+        "popularity": 74,
+        "type": "artist",
+        "uri": "spotify:artist:6AyATGg7mDgBlZ4N5uNog0"
+    },
+    {
+        "external_urls": {
+            "spotify": "https://open.spotify.com/artist/7JFi4ROpWvJU9ZMmHn8Yp5"
+        },
+        "followers": {
+            "href": null,
+            "total": 83048
+        },
+        "genres": [
+            "polish alternative",
+            "polish pop"
+        ],
+        "href": "https://api.spotify.com/v1/artists/7JFi4ROpWvJU9ZMmHn8Yp5",
+        "id": "7JFi4ROpWvJU9ZMmHn8Yp5",
+        "images": [
+            {
+                "height": 640,
+                "url": "https://i.scdn.co/image/ab6761610000e5eba09657c64a49f98e4633fbe0",
+                "width": 640
+            },
+            {
+                "height": 320,
+                "url": "https://i.scdn.co/image/ab67616100005174a09657c64a49f98e4633fbe0",
+                "width": 320
+            },
+            {
+                "height": 160,
+                "url": "https://i.scdn.co/image/ab6761610000f178a09657c64a49f98e4633fbe0",
+                "width": 160
+            }
+        ],
+        "name": "Mikromusic",
+        "popularity": 47,
+        "type": "artist",
+        "uri": "spotify:artist:7JFi4ROpWvJU9ZMmHn8Yp5"
+    },
+    {
+        "external_urls": {
+            "spotify": "https://open.spotify.com/artist/53l3yjX8ITilPIlCRsVKEB"
+        },
+        "followers": {
+            "href": null,
+            "total": 174377
+        },
+        "genres": [
+            "polish alternative",
+            "polish pop"
+        ],
+        "href": "https://api.spotify.com/v1/artists/53l3yjX8ITilPIlCRsVKEB",
+        "id": "53l3yjX8ITilPIlCRsVKEB",
+        "images": [
+            {
+                "height": 640,
+                "url": "https://i.scdn.co/image/ab6761610000e5ebc93f238813a2e0e7aefe84a2",
+                "width": 640
+            },
+            {
+                "height": 320,
+                "url": "https://i.scdn.co/image/ab67616100005174c93f238813a2e0e7aefe84a2",
+                "width": 320
+            },
+            {
+                "height": 160,
+                "url": "https://i.scdn.co/image/ab6761610000f178c93f238813a2e0e7aefe84a2",
+                "width": 160
+            }
+        ],
+        "name": "Kwiat Jabłoni",
+        "popularity": 64,
+        "type": "artist",
+        "uri": "spotify:artist:53l3yjX8ITilPIlCRsVKEB"
+    },
+    {
+        "external_urls": {
+            "spotify": "https://open.spotify.com/artist/37M5pPGs6V1fchFJSgCguX"
+        },
+        "followers": {
+            "href": null,
+            "total": 1604045
+        },
+        "genres": [
+            "alt z",
+            "electropop",
+            "la indie",
+            "pop"
+        ],
+        "href": "https://api.spotify.com/v1/artists/37M5pPGs6V1fchFJSgCguX",
+        "id": "37M5pPGs6V1fchFJSgCguX",
+        "images": [
+            {
+                "height": 640,
+                "url": "https://i.scdn.co/image/ab6761610000e5eb998074cb12f4ad443434d82a",
+                "width": 640
+            },
+            {
+                "height": 320,
+                "url": "https://i.scdn.co/image/ab67616100005174998074cb12f4ad443434d82a",
+                "width": 320
+            },
+            {
+                "height": 160,
+                "url": "https://i.scdn.co/image/ab6761610000f178998074cb12f4ad443434d82a",
+                "width": 160
+            }
+        ],
+        "name": "FINNEAS",
+        "popularity": 75,
+        "type": "artist",
+        "uri": "spotify:artist:37M5pPGs6V1fchFJSgCguX"
+    },
+    {
+        "external_urls": {
+            "spotify": "https://open.spotify.com/artist/26dSoYclwsYLMAKD3tpOr4"
+        },
+        "followers": {
+            "href": null,
+            "total": 10648771
+        },
+        "genres": [
+            "dance pop",
+            "pop",
+            "post-teen pop"
+        ],
+        "href": "https://api.spotify.com/v1/artists/26dSoYclwsYLMAKD3tpOr4",
+        "id": "26dSoYclwsYLMAKD3tpOr4",
+        "images": [
+            {
+                "height": 640,
+                "url": "https://i.scdn.co/image/ab6761610000e5ebf2ac13247b26025069dbdc4e",
+                "width": 640
+            },
+            {
+                "height": 320,
+                "url": "https://i.scdn.co/image/ab67616100005174f2ac13247b26025069dbdc4e",
+                "width": 320
+            },
+            {
+                "height": 160,
+                "url": "https://i.scdn.co/image/ab6761610000f178f2ac13247b26025069dbdc4e",
+                "width": 160
+            }
+        ],
+        "name": "Britney Spears",
+        "popularity": 84,
+        "type": "artist",
+        "uri": "spotify:artist:26dSoYclwsYLMAKD3tpOr4"
+    },
+    {
+        "external_urls": {
+            "spotify": "https://open.spotify.com/artist/6EB8VE9f7Ut6NOgviN6gDW"
+        },
+        "followers": {
+            "href": null,
+            "total": 1441664
+        },
+        "genres": [
+            "polish alternative",
+            "polish pop",
+            "talent show"
+        ],
+        "href": "https://api.spotify.com/v1/artists/6EB8VE9f7Ut6NOgviN6gDW",
+        "id": "6EB8VE9f7Ut6NOgviN6gDW",
+        "images": [
+            {
+                "height": 640,
+                "url": "https://i.scdn.co/image/ab6761610000e5eb26a1d935d288dc8f0809c465",
+                "width": 640
+            },
+            {
+                "height": 320,
+                "url": "https://i.scdn.co/image/ab6761610000517426a1d935d288dc8f0809c465",
+                "width": 320
+            },
+            {
+                "height": 160,
+                "url": "https://i.scdn.co/image/ab6761610000f17826a1d935d288dc8f0809c465",
+                "width": 160
+            }
+        ],
+        "name": "Dawid Podsiadło",
+        "popularity": 67,
+        "type": "artist",
+        "uri": "spotify:artist:6EB8VE9f7Ut6NOgviN6gDW"
+    },
+    {
+        "external_urls": {
+            "spotify": "https://open.spotify.com/artist/1fxbULcd6ryMNc1usHoP0R"
+        },
+        "followers": {
+            "href": null,
+            "total": 1176947
+        },
+        "genres": [
+            "polish hip hop"
+        ],
+        "href": "https://api.spotify.com/v1/artists/1fxbULcd6ryMNc1usHoP0R",
+        "id": "1fxbULcd6ryMNc1usHoP0R",
+        "images": [
+            {
+                "height": 640,
+                "url": "https://i.scdn.co/image/ab6761610000e5ebaf2ca1b60e2af011f4795f0a",
+                "width": 640
+            },
+            {
+                "height": 320,
+                "url": "https://i.scdn.co/image/ab67616100005174af2ca1b60e2af011f4795f0a",
+                "width": 320
+            },
+            {
+                "height": 160,
+                "url": "https://i.scdn.co/image/ab6761610000f178af2ca1b60e2af011f4795f0a",
+                "width": 160
+            }
+        ],
+        "name": "Quebonafide",
+        "popularity": 69,
+        "type": "artist",
+        "uri": "spotify:artist:1fxbULcd6ryMNc1usHoP0R"
+    },
+    {
+        "external_urls": {
+            "spotify": "https://open.spotify.com/artist/5WUlDfRSoLAfcVSX1WnrxN"
+        },
+        "followers": {
+            "href": null,
+            "total": 22789681
+        },
+        "genres": [
+            "australian dance",
+            "australian pop",
+            "pop"
+        ],
+        "href": "https://api.spotify.com/v1/artists/5WUlDfRSoLAfcVSX1WnrxN",
+        "id": "5WUlDfRSoLAfcVSX1WnrxN",
+        "images": [
+            {
+                "height": 640,
+                "url": "https://i.scdn.co/image/ab6761610000e5ebe8637c96a7aa2917eae3c54d",
+                "width": 640
+            },
+            {
+                "height": 320,
+                "url": "https://i.scdn.co/image/ab67616100005174e8637c96a7aa2917eae3c54d",
+                "width": 320
+            },
+            {
+                "height": 160,
+                "url": "https://i.scdn.co/image/ab6761610000f178e8637c96a7aa2917eae3c54d",
+                "width": 160
+            }
+        ],
+        "name": "Sia",
+        "popularity": 88,
+        "type": "artist",
+        "uri": "spotify:artist:5WUlDfRSoLAfcVSX1WnrxN"
+    },
+    {
+        "external_urls": {
+            "spotify": "https://open.spotify.com/artist/1vCWHaC5f2uS3yhpwWbIA6"
+        },
+        "followers": {
+            "href": null,
+            "total": 21543845
+        },
+        "genres": [
+            "dance pop",
+            "edm",
+            "pop",
+            "pop dance"
+        ],
+        "href": "https://api.spotify.com/v1/artists/1vCWHaC5f2uS3yhpwWbIA6",
+        "id": "1vCWHaC5f2uS3yhpwWbIA6",
+        "images": [
+            {
+                "height": 640,
+                "url": "https://i.scdn.co/image/ab6761610000e5eb09bf4814c6585e1f69dfeef7",
+                "width": 640
+            },
+            {
+                "height": 320,
+                "url": "https://i.scdn.co/image/ab6761610000517409bf4814c6585e1f69dfeef7",
+                "width": 320
+            },
+            {
+                "height": 160,
+                "url": "https://i.scdn.co/image/ab6761610000f17809bf4814c6585e1f69dfeef7",
+                "width": 160
+            }
+        ],
+        "name": "Avicii",
+        "popularity": 85,
+        "type": "artist",
+        "uri": "spotify:artist:1vCWHaC5f2uS3yhpwWbIA6"
+    },
+    {
+        "external_urls": {
+            "spotify": "https://open.spotify.com/artist/5xoXMR6Y8PORwObvyND9ZE"
+        },
+        "followers": {
+            "href": null,
+            "total": 104713
+        },
+        "genres": [
+            "polish alternative",
+            "polish pop"
+        ],
+        "href": "https://api.spotify.com/v1/artists/5xoXMR6Y8PORwObvyND9ZE",
+        "id": "5xoXMR6Y8PORwObvyND9ZE",
+        "images": [
+            {
+                "height": 640,
+                "url": "https://i.scdn.co/image/ab6761610000e5eba640e900047e98da85960294",
+                "width": 640
+            },
+            {
+                "height": 320,
+                "url": "https://i.scdn.co/image/ab67616100005174a640e900047e98da85960294",
+                "width": 320
+            },
+            {
+                "height": 160,
+                "url": "https://i.scdn.co/image/ab6761610000f178a640e900047e98da85960294",
+                "width": 160
+            }
+        ],
+        "name": "Męskie Granie Orkiestra 2021",
+        "popularity": 60,
+        "type": "artist",
+        "uri": "spotify:artist:5xoXMR6Y8PORwObvyND9ZE"
+    }
+]

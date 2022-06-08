@@ -8,17 +8,12 @@ import { render } from '@testing-library/react';
 
 function Artists () {
     const [artists, setArtists] = React.useState([{}]);
-    const [show, setShow] = React.useState(false);
-    const [element, setElement] = useState("artist-element");
+    const [fade, setFade] = useState(false);
 
-    const fadeMount = useSpring({to: { opacity: 1 }, from:{ opacity: 0 }, config:{duration: 1000}});
-    const fadeClick = useSpring({to: { opacity: 0.5 }, from:{ opacity: 1 }, config:{duration: 1000}});
+    const fadeMount = useSpring({to: { opacity: 0.6 }, from:{ opacity: 0 }, config:{duration: 1000}});
 
-    const showDescription = () => {
-        setShow(!show);
-        console.log(show);
-    }
     
+    // Get high resolution picture url
     const getUrl = (images) => {
         let url = '';
         for (const i in images) {
@@ -28,6 +23,7 @@ function Artists () {
         return url;
     }
 
+    // Get main music genre
     const getGenre = (genres) => {
         let genre = '';
         for (const i in genres) {
@@ -43,13 +39,12 @@ function Artists () {
             return res.json()
         })
         .then(artists => {
-            console.log(artists);
             setArtists(artists);
         })
         .catch(function(err){
             console.log('Error');
         })
-        
+
     }, []);
 
     return (
@@ -57,9 +52,9 @@ function Artists () {
             <h1 class="page-header">
                 Your favourite artists
             </h1>
-            <animated.div style={fadeMount} class="container">
-                {artists.map((artist) => (
-                    <div class="artist-element" onClick={setElement} style={{ backgroundImage: `url(${getUrl(artist?.images)})`}}>
+            <animated.div class="container" style={fadeMount}>
+                {artists.map((artist, index) => (
+                    <div class="artist-element" style={{ backgroundImage: `url(${getUrl(artist?.images)})`}}>
                         <div class="artist-name" text-align="centered">
                             {artist?.name}
                         </div>
@@ -67,7 +62,7 @@ function Artists () {
                             {NumFormatter(parseInt(artist?.followers?.total))} FOLLOWERS
                             <br></br>
                             {artist?.popularity} POPULARITY
-                            <br></br>
+                            <br></br> 
                             {getGenre(artist?.genres)}
                         </div>
                     </div>

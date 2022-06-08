@@ -7,6 +7,7 @@ const cors = require('cors');
 const cookieParser = require('cookie-parser');
 const request = require('request');
 const fs = require('fs');
+const fsPromises = require('fs').promises;
 const { debug } = require('console');
 const router = express.Router();
 
@@ -14,10 +15,24 @@ if (typeof localStorage === "undefined" || localStorage === null) {
   var LocalStorage = require('node-localstorage').LocalStorage;
   localStorage = new LocalStorage('./scratch');
 }
+const artists = require('./data/artists.json');
+
+// app.get('/top-artists', async (req, res) => {
+//   res.status(200).json(artists).catch(err => { // error handling logic 1
+//     console.error(err) // logging error
+//     res.status(500).send(err)
+//   })
+// })
+
+app.get('/top-artists', (req, res, next) => {
+  fsPromises.readFile('./data/artists.json') 
+    .then(data => res.status(200).send(data))
+    .catch(err => next(err))
+})
 
 // Variables used for authorization
 const client_id = '26de0e4db2204b8fb4860589f4485263';
-const redirect_uri = 'http://localhost:3000/callback';
+const redirect_uri = 'http://192.168.0.178:3000/callback';
 const client_secret = '4e343703cfec4354a327cc82c1302fa4'; // Should be added to env. in the future
 var user_id = '';
 
@@ -167,12 +182,7 @@ app.get('/refresh_token', async (req, res) => {
   res.redirect('/')
 });
 
-const artists = require('./data/artists.json');
-app.get('/top-artists', async (req, res) => 
-  res.status(200).json(artists)
-)
-
 app.listen(3000, () => {
   console.log("server is runnig on port 3000...");
-  console.log("Open your browser and hit url 'localhost:3000'");
+  console.log("Open your browser and hit url '192.168.0.178:3000'");
  }); 
