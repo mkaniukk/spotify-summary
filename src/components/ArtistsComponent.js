@@ -34,7 +34,7 @@ function Artists () {
     }
 
     useEffect(() => {
-        fetch('/top-artists')
+        fetch('/artists-data')
         .then(res => {
             return res.json()
         })
