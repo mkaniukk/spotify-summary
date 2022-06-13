@@ -163,7 +163,8 @@ app.get('/refresh_token', async (req, res) => {
       });
     }
   });
-  res.redirect('/')
+   res.redirect('/')
+
 });
 
 app.listen(3000, () => {
