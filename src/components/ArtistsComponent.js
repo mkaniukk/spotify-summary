@@ -53,8 +53,8 @@ function Artists () {
                 Your favourite artists
             </h1>
             <animated.div class="container" style={fadeMount}>
-                {artists.map((artist, index) => (
-                    <div class="artist-element" style={{ backgroundImage: `url(${getUrl(artist?.images)})`}}>
+                {artists.map((artist) => (
+                    <div key={artist?.id} class="artist-element" style={{ backgroundImage: `url(${getUrl(artist?.images)})`}}>
                         <div class="artist-name" text-align="centered">
                             {artist?.name}
                         </div>
