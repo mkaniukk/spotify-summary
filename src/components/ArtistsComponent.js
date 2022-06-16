@@ -10,7 +10,7 @@ function Artists () {
     const [artists, setArtists] = React.useState([{}]);
     const [fade, setFade] = useState(false);
 
-    const fadeMount = useSpring({to: { opacity: 0.6 }, from:{ opacity: 0 }, config:{duration: 1000}});
+    const fadeMount = useSpring({to: { opacity: 1 }, from:{ opacity: 0 }, config:{duration: 1000}});
 
     // Get high resolution picture url
     const getUrl = (images) => {

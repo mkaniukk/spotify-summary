@@ -5,7 +5,7 @@ import axios from 'axios';
 
 function Tracks () {
     const [tracks, setTracks] = React.useState([{}]);
-    const fadeMount = useSpring({to: { opacity: 0.6 }, from:{ opacity: 0 }, config:{duration: 1000}});
+    const fadeMount = useSpring({to: { opacity: 1 }, from:{ opacity: 0 }, config:{duration: 1000}});
 
     // Get high resolution picture url
     const getUrl = (images) => {
@@ -50,7 +50,7 @@ function Tracks () {
                 {tracks.map((track) => (
                     <div class="artist-element" style={{ backgroundImage: `url(${getUrl(track?.album?.images)})`}}>
                         <div class="artist-name" text-align="centered">
-                            "{track?.name}" by {getName(track?.artists)}
+                            "{track?.name}"<br></br> by <br></br>{getName(track?.artists)}
                         </div>
                         <div class="artist-description">
                             From "{track?.album?.name}"

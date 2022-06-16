@@ -117,9 +117,9 @@ app.get('/callback', async (req, res) => {
         });
 
         var tracksOptions = {
-          url: 'https://api.spotify.com/v1/me/top/tracks',
+          url: 'https://api.spotify.com/v1/me/top/tracks?limit=50&time_range=long_term',
           headers: { 'Authorization': 'Bearer ' + access_token },
-          json: true
+          json: true,
         };
 
         // use the access token to access the Spotify Web API
@@ -136,9 +136,9 @@ app.get('/callback', async (req, res) => {
         });
 
         var artitstsOptions = {
-          url: 'https://api.spotify.com/v1/me/top/artists',
-          headers: { 'Authorization': 'Bearer ' + access_token },
-          json: true
+          url: 'https://api.spotify.com/v1/me/top/artists?limit=50&time_range=long_term',
+          headers: { 'Authorization': 'Bearer ' + access_token},
+          json: true,
         };
 
         // use the access token to access the Spotify Web API

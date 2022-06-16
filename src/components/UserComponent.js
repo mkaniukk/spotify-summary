@@ -32,13 +32,14 @@ function User () {
     return (
         <div>
             <h1 class="page-header">
-                {user.display_name}
+                Logged in as
             </h1>
-            <div>
-                <div>
-                    <img src={getUrl(user?.images)}></img>
-                </div>
-                <div>
+            <div class="user-element">
+                <span class="artist-name">{user.display_name}</span>            
+                
+                <img src={getUrl(user?.images)}></img>
+                
+                <div class="artist-description">
                     {user?.followers?.total} FOLLOWERS
                 </div>
             </div>
