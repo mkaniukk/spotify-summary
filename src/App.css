@@ -124,6 +124,24 @@ button {
   background-size: cover;
 }
 
+.user-element {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  text-align: center;
+  color: white;
+  margin: auto;
+  width: min(45vw, 300px);
+  height: min(60vw, 450px);
+  border: 5px whitesmoke;
+  border-radius: 10%;
+  background-color: #1098F7;
+  opacity: 1;
+  transition: opacity 500ms ease-in;
+  background-size: cover;
+}
+
 .artist-name {
   font-size: min(4vw, 30px);
   text-transform: uppercase;

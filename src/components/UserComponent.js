@@ -31,11 +31,17 @@ function User () {
 
     return (
         <div>
-            <h1>
+            <h1 class="page-header">
                 {user.display_name}
             </h1>
-            <img src={getUrl(user?.images)}></img>
-            {user?.followers?.total} FOLLOWERS
+            <div>
+                <div>
+                    <img src={getUrl(user?.images)}></img>
+                </div>
+                <div>
+                    {user?.followers?.total} FOLLOWERS
+                </div>
+            </div>
         </div>
     );
 

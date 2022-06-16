@@ -10,12 +10,19 @@ const fs = require('fs');
 const fsPromises = require('fs').promises;
 const { debug } = require('console');
 const router = express.Router();
+
+if (typeof localStorage === "undefined" || localStorage === null) {
+  var LocalStorage = require('node-localstorage').LocalStorage;
+  localStorage = new LocalStorage('./scratch');
+}
 const artists = require('./data/artists.json');
 
-// Variables used for authorization
-const client_id = '26de0e4db2204b8fb4860589f4485263';
-const redirect_uri = 'http://192.168.0.178:3000/callback';
-const client_secret = '4e343703cfec4354a327cc82c1302fa4'; // Should be added to env. in the future
+// app.get('/top-artists', async (req, res) => {
+//   res.status(200).json(artists).catch(err => { // error handling logic 1
+//     console.error(err) // logging error
+//     res.status(500).send(err)
+//   })
+// })
 
 // Send artist data.
 app.get('/artists-data', (req, res, next) => {
@@ -38,6 +45,12 @@ app.get('/tracks-data', (req, res, next) => {
     .catch(err => next(err))
 })
 
+// Variables used for authorization
+const client_id = '26de0e4db2204b8fb4860589f4485263';
+const redirect_uri = 'http://192.168.0.178:3000/callback';
+const client_secret = '4e343703cfec4354a327cc82c1302fa4'; // Should be added to env. in the future
+var user_id = '';
+
 app.use(express.static(path.join(__dirname, 'build')));
 
 app.get('/', async (req, res) => {
@@ -50,7 +63,7 @@ app.get("/lyrics", async (req, res) => {
   res.json({ lyrics })
 })
 
-app.get('/login', async (req, res) => {
+app.get('/login', async(req, res) => {
   var state = randomstring.generate(16);
   var scope = 'user-read-private user-read-email user-library-read user-top-read';
 
@@ -90,7 +103,7 @@ app.get('/callback', async (req, res) => {
     request.post(authOptions, async (error, response, body) => {
       if (!error && response.statusCode === 200) {
         var access_token = body.access_token,
-          refresh_token = body.refresh_token;
+            refresh_token = body.refresh_token;
 
         var personalOptions = {
           url: 'https://api.spotify.com/v1/me',
@@ -98,13 +111,9 @@ app.get('/callback', async (req, res) => {
           json: true
         };
 
-        // Use the access token to access the Spotify Web API
+        // use the access token to access the Spotify Web API
         request.get(personalOptions, async (error, response, body) => {
           user_id = body.id;
-          var data = JSON.stringify(body);
-          fs.writeFileSync('data/user.json', data, (err) => {
-            if (err) throw err;
-          })
         });
 
         var tracksOptions = {
@@ -113,36 +122,58 @@ app.get('/callback', async (req, res) => {
           json: true
         };
 
-        // Get tracks data
+        // use the access token to access the Spotify Web API
         request.get(tracksOptions, async (error, response, body) => {
+          for (let i in body.items) {
+            console.log(body.items[i].name + " - " + body.items[i].artists[0].name);
+            artists[body.items[i].name] = body.items[i].artists[0].name;
+          };
           var data = JSON.stringify(body.items);
           fs.writeFileSync('data/tracks.json', data, (err) => {
             if (err) throw err;
           })
-
+          
         });
 
-        // Get artists data
         var artitstsOptions = {
           url: 'https://api.spotify.com/v1/me/top/artists',
           headers: { 'Authorization': 'Bearer ' + access_token },
           json: true
         };
 
+        // use the access token to access the Spotify Web API
         request.get(artitstsOptions, async (error, response, body) => {
+          for (let i in body.items) {
+            localStorage.setItem(toString(i), body.items[i].name)
+          };
           var data = JSON.stringify(body.items);
           fs.writeFileSync('data/artists.json', data, (err) => {
             if (err) throw err;
           })
-
+          
         });
+                
+        // we can also pass the token to the browser to make requests from there
+        res.redirect('/#' +
+          queryString.stringify({
+            access_token: access_token,
+            refresh_token: refresh_token
+          }));
+
+      } else {
+        res.redirect('/#' +
+          queryString.stringify({
+            error: 'invalid_token'
+          }));
       }
+
     });
   }
 
 });
 
 // Refresh token
+
 app.get('/refresh_token', async (req, res) => {
   var refresh_token = req.query.refresh_token;
   var authOptions = {
@@ -162,12 +193,11 @@ app.get('/refresh_token', async (req, res) => {
         'access_token': access_token
       });
     }
-  });
-   res.redirect('/')
-
+  }); 
+  res.redirect('/')
 });
 
 app.listen(3000, () => {
   console.log("server is runnig on port 3000...");
   console.log("Open your browser and hit url '192.168.0.178:3000'");
-}); 
+ }); 

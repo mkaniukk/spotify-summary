@@ -17,6 +17,16 @@ function Tracks () {
         return url;
     }
 
+    // Get high resolution picture url
+    const getName = (artists) => {
+        let name = '';
+        for (const i in artists) {
+            name = artists[i].name;
+            break;
+        }
+        return name;
+    }
+
     useEffect(() => {
         fetch('/tracks-data')
         .then(res => {
@@ -38,12 +48,12 @@ function Tracks () {
             </h1>
             <animated.div class="container" style={fadeMount}>
                 {tracks.map((track) => (
-                    <div class="artist-element" style={{ backgroundImage: `url(${getUrl(track?.images)})`}}>
+                    <div class="artist-element" style={{ backgroundImage: `url(${getUrl(track?.album?.images)})`}}>
                         <div class="artist-name" text-align="centered">
-                            {track?.artist?.name} by {track?.artist?.name}
+                            "{track?.name}" by {getName(track?.artists)}
                         </div>
                         <div class="artist-description">
-
+                            From "{track?.album?.name}"
                         </div>
                     </div>
                 ))}

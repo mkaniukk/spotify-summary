@@ -12,7 +12,6 @@ function Artists () {
 
     const fadeMount = useSpring({to: { opacity: 0.6 }, from:{ opacity: 0 }, config:{duration: 1000}});
 
-    
     // Get high resolution picture url
     const getUrl = (images) => {
         let url = '';
@@ -40,6 +39,7 @@ function Artists () {
         })
         .then(artists => {
             setArtists(artists);
+            console.log(artists);
         })
         .catch(function(err){
             console.log('Error');
