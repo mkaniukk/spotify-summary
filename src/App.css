@@ -32,6 +32,22 @@ body {
   color: gray;
 }
 
+button {
+  display: flex;
+  border-radius: 10px;
+  background-color: #1DB954;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  width: min(90vw, 900px);
+  height: min(20vw, 450px);
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  font-size: min(4vw, 30px);
+  margin-left: auto;
+  margin-right: auto;
+}
+
 /* Add a background color to the top navigation */
 .topnav {
   background-color: #1DB954;
@@ -99,7 +115,7 @@ ul {
   color: gray;
 }
 
-button {
+/* button {
   display: block;
   justify-content: center;
   text-align: center;
@@ -108,7 +124,7 @@ button {
   width: 75%;
   color: black;
   background-color: rgb(0, 165, 0);
-}
+} */
 
 .artist-element {
   display: flex;
@@ -181,7 +197,7 @@ button {
   margin: auto;
   padding: 30px;
   font-size: min(5vw, 40px);
-  margin-top: 45px;
+  margin-top: 70px;
   margin-bottom: 5px;
   background-color: #D3D4D9;
   color: #575761;
@@ -191,6 +207,15 @@ img {
   border-radius: 50%;
   width: min(40vw, 400px);
   height: min(40vw, 400px);
+  justify-content: center;
+  position: relative;
+  vertical-align: middle;
+  align-items: center;
+}
+
+.icon {
+  width: min(5vw, 50px);
+  height: min(5vw, 50px);
   justify-content: center;
   position: relative;
   vertical-align: middle;

@@ -31,8 +31,6 @@ function Tracks () {
         let path = track?.external_urls?.spotify;
         const newWindow = window.open(path, '_blank', 'noopener,noreferrer')
         if (newWindow) newWindow.opener = null
-        console.log(path);
-        console.log('Click');
     }
 
     useEffect(() => {

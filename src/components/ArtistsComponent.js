@@ -36,8 +36,6 @@ function Artists () {
         let path = artist?.external_urls?.spotify;
         const newWindow = window.open(path, '_blank', 'noopener,noreferrer')
         if (newWindow) newWindow.opener = null
-        console.log(path);
-        console.log('Click');
     }
 
     useEffect(() => {
@@ -65,6 +63,9 @@ function Artists () {
                         <div class="artist-name" text-align="centered">
                             {artist?.name}
                         </div>
+                        <div>
+                            Play Preview
+                        </div>
                         <div class="artist-description">
                             {NumFormatter(parseInt(artist?.followers?.total))} FOLLOWERS
                             <br></br>
@@ -75,6 +76,9 @@ function Artists () {
                     </div>
                 ))}
             </animated.div>
+            <div>
+                <button>Create All Time Favourites playlist.</button>
+            </div>
         </div>
     );
 
