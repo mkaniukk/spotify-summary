@@ -39,7 +39,6 @@ function Artists () {
         })
         .then(artists => {
             setArtists(artists);
-            console.log(artists);
         })
         .catch(function(err){
             console.log('Error');

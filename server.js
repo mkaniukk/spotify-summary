@@ -15,7 +15,6 @@ if (typeof localStorage === "undefined" || localStorage === null) {
   var LocalStorage = require('node-localstorage').LocalStorage;
   localStorage = new LocalStorage('./scratch');
 }
-const artists = require('./data/artists.json');
 
 // app.get('/top-artists', async (req, res) => {
 //   res.status(200).json(artists).catch(err => { // error handling logic 1

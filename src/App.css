@@ -2,7 +2,7 @@
   text-align: center;
   background-color: #575761;
   color: #D3D4D9;
-  font-family: 'Times New Roman', Times, serif;
+  font-family: Tahoma, sans-serif;
 }
 
 html,
@@ -36,6 +36,9 @@ body {
 .topnav {
   background-color: #1DB954;
   overflow: hidden;
+  position: fixed; /* Set the navbar to fixed position */
+  top: 0; /* Position the navbar at the top of the page */
+  width: 100%; /* Full width */
 }
 
 /* Style the links inside the navigation bar */
@@ -45,7 +48,7 @@ body {
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
-  font-size: 17px;
+  font-size: min(3vw, 20px);
 }
 
 /* Change the color of links on hover */
@@ -176,6 +179,12 @@ button {
   justify-content: center;
   text-align: center;
   margin: auto;
+  padding: 30px;
+  font-size: min(5vw, 40px);
+  margin-top: 45px;
+  margin-bottom: 5px;
+  background-color: #D3D4D9;
+  color: #575761;
 }
 
 img {
