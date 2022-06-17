@@ -8,6 +8,7 @@ import Artists from './components/ArtistsComponent'
 import Topbar from './components/TopbarComponent';
 import Tracks from './components/TracksComponent'
 import Settings from './components/SettingsComponent';
+import NotFoundPage from './components/NotFoundPageComponent';
 
 function App(props) {
   return (

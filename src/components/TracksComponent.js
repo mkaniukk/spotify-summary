@@ -1,6 +1,6 @@
 import React, { Component, useEffect, useState } from 'react';
 import { useSpring, animated } from 'react-spring'
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import axios from 'axios';
 
 function Tracks () {
@@ -27,6 +27,14 @@ function Tracks () {
         return name;
     }
 
+    const redirectToTrack = (track) => {
+        let path = track?.external_urls?.spotify;
+        const newWindow = window.open(path, '_blank', 'noopener,noreferrer')
+        if (newWindow) newWindow.opener = null
+        console.log(path);
+        console.log('Click');
+    }
+
     useEffect(() => {
         fetch('/tracks-data')
         .then(res => {
@@ -48,7 +56,7 @@ function Tracks () {
             </h1>
             <animated.div class="container" style={fadeMount}>
                 {tracks.map((track) => (
-                    <div class="artist-element" style={{ backgroundImage: `url(${getUrl(track?.album?.images)})`}}>
+                    <div class="artist-element" style={{ backgroundImage: `url(${getUrl(track?.album?.images)})`}} onClick={() => redirectToTrack(track)}>
                         <div class="artist-name" text-align="centered">
                             "{track?.name}"<br></br> by <br></br>{getName(track?.artists)}
                         </div>

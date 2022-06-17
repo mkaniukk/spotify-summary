@@ -123,10 +123,12 @@ app.get('/callback', async (req, res) => {
 
         // use the access token to access the Spotify Web API
         request.get(tracksOptions, async (error, response, body) => {
-          for (let i in body.items) {
-            console.log(body.items[i].name + " - " + body.items[i].artists[0].name);
-            artists[body.items[i].name] = body.items[i].artists[0].name;
-          };
+          
+          // for (let i in body.items) {
+          //   console.log(body.items[i].name + " - " + body.items[i].artists[0].name);
+          //   artists[body.items[i].name] = body.items[i].artists[0].name;
+          // };
+          
           var data = JSON.stringify(body.items);
           fs.writeFileSync('data/tracks.json', data, (err) => {
             if (err) throw err;

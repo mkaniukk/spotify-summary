@@ -32,6 +32,14 @@ function Artists () {
         return genre;
     }
 
+    const redirectToArtist = (artist) => {
+        let path = artist?.external_urls?.spotify;
+        const newWindow = window.open(path, '_blank', 'noopener,noreferrer')
+        if (newWindow) newWindow.opener = null
+        console.log(path);
+        console.log('Click');
+    }
+
     useEffect(() => {
         fetch('/artists-data')
         .then(res => {
@@ -53,7 +61,7 @@ function Artists () {
             </h1>
             <animated.div class="container" style={fadeMount}>
                 {artists.map((artist) => (
-                    <div key={artist?.id} class="artist-element" style={{ backgroundImage: `url(${getUrl(artist?.images)})`}}>
+                    <div key={artist?.id} class="artist-element" style={{ backgroundImage: `url(${getUrl(artist?.images)})`}} onClick={() => redirectToArtist(artist)}>
                         <div class="artist-name" text-align="centered">
                             {artist?.name}
                         </div>
