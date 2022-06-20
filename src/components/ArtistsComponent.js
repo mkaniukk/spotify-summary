@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 import axios from 'axios';
 import { render } from '@testing-library/react';
 
+
 function Artists () {
     const [artists, setArtists] = React.useState([{}]);
     const [fade, setFade] = useState(false);
@@ -62,9 +63,6 @@ function Artists () {
                     <div key={artist?.id} class="artist-element" style={{ backgroundImage: `url(${getUrl(artist?.images)})`}} onClick={() => redirectToArtist(artist)}>
                         <div class="artist-name" text-align="centered">
                             {artist?.name}
-                        </div>
-                        <div>
-                            Play Preview
                         </div>
                         <div class="artist-description">
                             {NumFormatter(parseInt(artist?.followers?.total))} FOLLOWERS

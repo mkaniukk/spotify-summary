@@ -4,6 +4,7 @@
   "private": true,
   "proxy": "http://192.168.0.178:3005/",
   "dependencies": {
+    "@reduxjs/toolkit": "^1.8.2",
     "@testing-library/jest-dom": "^5.16.1",
     "@testing-library/react": "^12.1.2",
     "@testing-library/user-event": "^13.5.0",

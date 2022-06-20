@@ -1,11 +1,14 @@
-import React, { Component, useEffect, useState } from 'react';
+import React, { Component, useEffect, useRef, useState } from 'react';
 import { useSpring, animated } from 'react-spring'
 import { useNavigate } from "react-router-dom";
 import axios from 'axios';
+import play from '../icons/play.png'
 
-function Tracks () {
+function Tracks() {
     const [tracks, setTracks] = React.useState([{}]);
-    const fadeMount = useSpring({to: { opacity: 1 }, from:{ opacity: 0 }, config:{duration: 1000}});
+    const [preview, setPreview] = React.useState();
+
+    const fadeMount = useSpring({ to: { opacity: 1 }, from: { opacity: 0 }, config: { duration: 1000 } });
 
     // Get high resolution picture url
     const getUrl = (images) => {
@@ -33,19 +36,35 @@ function Tracks () {
         if (newWindow) newWindow.opener = null
     }
 
+    const playPreview = (track) => {
+        let url = track?.preview_url;
+        let audio = new Audio(url);
+        audio.play();
+        return () => {
+            audio.pause();
+        };
+    }
+
     useEffect(() => {
         fetch('/tracks-data')
-        .then(res => {
-            return res.json()
-        })
-        .then(tracks => {
-            setTracks(tracks);
-        })
-        .catch(function(err){
-            console.log('Error');
-        })
+            .then(res => {
+                return res.json()
+            })
+            .then(tracks => {
+                for (let track in tracks) {
+                    tracks[track].isPlaying = false;
+                }
+                setTracks(tracks);
+            })
+            .catch(function (err) {
+                console.log(err);
+            })
 
     }, []);
+
+    useEffect(() => { 
+
+    }, [preview]);
 
     return (
         <div>
@@ -54,9 +73,12 @@ function Tracks () {
             </h1>
             <animated.div class="container" style={fadeMount}>
                 {tracks.map((track) => (
-                    <div class="artist-element" style={{ backgroundImage: `url(${getUrl(track?.album?.images)})`}} onClick={() => redirectToTrack(track)}>
-                        <div class="artist-name" text-align="centered">
+                    <div class="artist-element" style={{ backgroundImage: `url(${getUrl(track?.album?.images)})` }}>
+                        <div class="artist-name" text-align="centered" onClick={() => redirectToTrack(track)}>
                             "{track?.name}"<br></br> by <br></br>{getName(track?.artists)}
+                        </div>
+                        <div>
+                            <img src={play} class="icon" onClick={() => playPreview(track)} />
                         </div>
                         <div class="artist-description">
                             From "{track?.album?.name}"

@@ -1,28 +1,31 @@
-import logo from './logo.svg';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter, Routes, Router, Route } from "react-router-dom";
+import store from './store'
+import { Provider } from 'react-redux'
 import './App.css';
-import User from './components/UserComponent';
-import Artists from './components/ArtistsComponent'
-import Topbar from './components/TopbarComponent';
-import Tracks from './components/TracksComponent'
-import Settings from './components/SettingsComponent';
-import NotFoundPage from './components/NotFoundPageComponent';
+import User from './Components/UserComponent';
+import Artists from './Components/ArtistsComponent'
+import Topbar from './Components/NavbarComponent';
+import Tracks from './Components/TracksComponent'
+import Settings from './Components/SettingsComponent';
+import NotFoundPage from './Components/NotFoundPageComponent';
 
 function App(props) {
   return (
-    <BrowserRouter>
-      <div>
-        <Topbar />
-      </div>
-      <Routes>
-        <Route path="/" element={<User />} />
-        <Route path="artists" element={<Artists />} />
-        <Route path="tracks" element={<Tracks />} />
-        <Route path="settings" element={<Settings />} />
-      </Routes>
-    </BrowserRouter>
+    <Provider store={store}>
+      <BrowserRouter>
+        <div>
+          <Topbar />
+        </div>
+        <Routes>
+          <Route path="/" element={<User />} />
+          <Route path="artists" element={<Artists />} />
+          <Route path="tracks" element={<Tracks />} />
+          <Route path="settings" element={<Settings />} />
+        </Routes>
+      </BrowserRouter>
+    </Provider>
   );
 }
 
