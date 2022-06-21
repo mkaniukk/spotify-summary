@@ -47,7 +47,7 @@ app.get('/tracks-data', (req, res, next) => {
 // Variables used for authorization
 const client_id = '26de0e4db2204b8fb4860589f4485263';
 const redirect_uri = 'http://192.168.0.178:3000/callback';
-const client_secret = '4e343703cfec4354a327cc82c1302fa4'; // Should be added to env. in the future
+const client_secret = process.env.SPOTIFY_SECRET;
 var user_id = '';
 
 app.use(express.static(path.join(__dirname, 'build')));
