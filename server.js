@@ -115,6 +115,15 @@ app.get('/callback', async (req, res) => {
           user_id = body.id;
         });
 
+        // Use the access token to access the Spotify Web API
+        request.get(personalOptions, async (error, response, body) => {
+          user_id = body.id;
+          var data = JSON.stringify(body);
+          fs.writeFileSync('data/user.json', data, (err) => {
+            if (err) throw err;
+          })
+        });
+
         var tracksOptions = {
           url: 'https://api.spotify.com/v1/me/top/tracks?limit=50&time_range=long_term',
           headers: { 'Authorization': 'Bearer ' + access_token },
