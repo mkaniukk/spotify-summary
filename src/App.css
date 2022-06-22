@@ -7,7 +7,8 @@
 
 html,
 body {
-  background-color: #575761;
+  background: rgb(56,255,126);
+  background: linear-gradient(90deg, rgba(56,255,126,1) 0%, rgba(34,198,193,1) 50%, rgba(16,152,247,1) 100%);
   color: #D3D4D9;
 }
 
@@ -55,6 +56,7 @@ button {
   position: fixed; /* Set the navbar to fixed position */
   top: 0; /* Position the navbar at the top of the page */
   width: 100%; /* Full width */
+  border-bottom: 2px solid black;
 }
 
 /* Style the links inside the navigation bar */
@@ -115,35 +117,20 @@ ul {
   color: gray;
 }
 
-/* button {
-  display: block;
-  justify-content: center;
-  text-align: center;
-  margin: auto;
-  height: 100px;
-  width: 75%;
-  color: black;
-  background-color: rgb(0, 165, 0);
-} */
-
 .artist-element {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-  text-align: center;
+  position: relative;
   color: white;
   margin: auto;
-  width: min(45vw, 300px);
-  height: min(60vw, 450px);
+  width: min(45vw, 200px);
+  height: min(60vw, 300px);
   border: 5px whitesmoke;
   border-radius: 10%;
-  background-color: #1098F7;
   opacity: 1;
   transition: opacity 500ms ease-in;
   background-size: cover;
   background-color: rgba(0, 0, 0, 0.7);
   text-shadow: -2px -2px 4px rgba(0, 0, 0, 0.8), 2px -2px 4px rgba(0, 0, 0, 0.8), -2px 2px 4px rgba(0, 0, 0, 0.8), 2px 2px 4px rgba(0, 0, 0, 0.8);
+  box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.6);
 }
 
 .user-element {
@@ -158,12 +145,13 @@ ul {
   height: min(70vw, 700px);
   opacity: 1;
   transition: opacity 500ms ease-in;
+  text-shadow: -2px -2px 4px rgba(0, 0, 0, 0.8), 2px -2px 4px rgba(0, 0, 0, 0.8), -2px 2px 4px rgba(0, 0, 0, 0.8), 2px 2px 4px rgba(0, 0, 0, 0.8);
 }
 
 .artist-name {
-  font-size: min(4vw, 30px);
+  font-size: min(3.5vw, 20px);
   text-transform: uppercase;
-  margin-top: min(4vw, 20px);
+  margin-top: min(3vw, 20px);
   text-align: left;
   /* background: rgb(0, 0, 0);
   background: rgba(0, 0, 0, 0.7); */
@@ -171,24 +159,28 @@ ul {
   border-radius: 15px;
   margin-left: 15px;
   margin-right: auto;
+  position:absolute;                
+  top: 5px;                        
+  left: 5px;  
   /* text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.8); */
   /* text-shadow: -2px -2px 4px rgba(0, 0, 0, 0.8), 2px -2px 4px rgba(0, 0, 0, 0.8), -2px 2px 4px rgba(0, 0, 0, 0.8), 2px 2px 4px rgba(0, 0, 0, 0.8); */
 }
 
 .artist-description {
-  font-size: min(3vw, 20px);
-  display: flex;
+  position:absolute;                
+  bottom: 5px;                        
+  right: 5px;
+  margin-left: 40px;  
+  font-size: min(2.5vw, 15px);
   text-align: right;
-  margin-left: auto;
-  margin-right: 15px;
   vertical-align: text-bottom;
+  /* vertical-align: text-bottom; */
   text-transform: uppercase;
   border-radius: 15px;
   /* background: rgb(0, 0, 0);
   background: rgba(0, 0, 0, 0.7); */
   /* text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.8); */
   /* text-shadow: -2px -2px 4px rgba(0, 0, 0, 0.8), 2px -2px 4px rgba(0, 0, 0, 0.8), -2px 2px 4px rgba(0, 0, 0, 0.8), 2px 2px 4px rgba(0, 0, 0, 0.8); */
-  margin-bottom: min(4vw, 20px);
   /* width:min(45vw, 300px); */
 }
 
@@ -198,10 +190,11 @@ ul {
   margin: auto;
   padding: 30px;
   font-size: min(5vw, 40px);
-  margin-top: 70px;
+  margin-top: 100px;
   margin-bottom: 5px;
-  background-color: #D3D4D9;
-  color: #575761;
+  /* background-color: #D3D4D9; */
+  color: white;
+  text-shadow: -2px -2px 4px rgba(0, 0, 0, 0.8), 2px -2px 4px rgba(0, 0, 0, 0.8), -2px 2px 4px rgba(0, 0, 0, 0.8), 2px 2px 4px rgba(0, 0, 0, 0.8);
 }
 
 img {
@@ -224,10 +217,20 @@ img {
   filter: invert(100%);
 }
 
+.icon-preview {
+  position:absolute;                
+  bottom: 5px;                        
+  left: 5px;  
+  width: min(5vw, 45px);
+  height: min(5vw, 45px);
+  filter: invert(100%);
+  background-color: white;
+}
+
 .container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(45vw, 300px), 1fr));
-  gap: min(5vw, 20px) min(5vw, 20px);
+  grid-template-columns: repeat(auto-fit, minmax(min(45vw, 200px), 1fr));
+  gap: min(2vw, 30px) min(2vw, 30px);
   grid-template-areas:
     ". ."
     ". ."
@@ -238,5 +241,20 @@ img {
     ". ."
     ". ."
     ". ."
+    ". ."
     ". .";
+}
+
+.grid-header {
+  grid-area: header;
+  justify-content: center;
+  text-align: center;
+  margin: auto;
+  font-size: min(5vw, 40px);
+  margin-top: 100px;
+  margin-bottom: 5px;
+  /* background-color: #D3D4D9; */
+  color: white;
+  position: relative;
+  text-shadow: -2px -2px 4px rgba(0, 0, 0, 0.8), 2px -2px 4px rgba(0, 0, 0, 0.8), -2px 2px 4px rgba(0, 0, 0, 0.8), 2px 2px 4px rgba(0, 0, 0, 0.8);
 }

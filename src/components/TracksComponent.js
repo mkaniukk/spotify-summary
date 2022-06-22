@@ -3,10 +3,13 @@ import { useSpring, animated } from 'react-spring'
 import { useNavigate } from "react-router-dom";
 import axios from 'axios';
 import play from '../icons/play.png'
+import pause from '../icons/pause.png'
+import { useForceUpdate } from 'framer-motion';
 
 function Tracks() {
     const [tracks, setTracks] = React.useState([{}]);
-    const [preview, setPreview] = React.useState();
+    const [isPlaying, setIsPlaying] = React.useState([{}]);
+    const previewRef = React.useRef(null);
 
     const fadeMount = useSpring({ to: { opacity: 1 }, from: { opacity: 0 }, config: { duration: 1000 } });
 
@@ -36,14 +39,73 @@ function Tracks() {
         if (newWindow) newWindow.opener = null
     }
 
-    const playPreview = (track) => {
-        let url = track?.preview_url;
-        let audio = new Audio(url);
-        audio.play();
-        return () => {
-            audio.pause();
-        };
+    const preview = (track) => {
+        try {
+            if (!track?.preview_url)
+                return
+            // Pause the track that is already being played
+            if (track?.preview_url === previewRef.current?.audio?.src) {
+                previewRef.current?.audio.pause();
+                previewRef.current = null;
+                setTracks(
+                    tracks.map(item =>
+                        item.id === track.id
+                            ? { ...item, isPlaying: false }
+                            : item
+                    ))
+                console.log("stop playing");
+                console.log(tracks);
+            } else {
+                // Pause previous track
+                if (previewRef.current !== null) {
+                    previewRef.current?.audio.pause();
+                    setTracks(
+                        tracks.map(item =>
+                            item.id === previewRef.current.id
+                                ? { ...item, isPlaying: false }
+                                : item
+                        ))
+                    console.log("stop playing previous");
+                    console.log(tracks);
+                    previewRef.current = null;
+                }
+                // No track is playing 
+                let url = track?.preview_url;
+                let audio = new Audio(url);
+                previewRef.current = { audio: audio, id: track?.id };
+                audio.play();
+                setTracks(
+                    tracks.map(item =>
+                        item.id === track.id
+                            ? { ...item, isPlaying: true }
+                            : item
+                    ))
+                console.log("start playing");
+                console.log(tracks);
+            }
+        } catch (error) {
+            console.log(error.message);
+        }
     }
+
+    const getIcon = (track) => {
+        if (track.isPlaying)
+            return pause;
+        else
+            return play;
+    }
+
+    const createPlaylist = () => {
+        fetch('/create-playlist')
+            .then(res => {
+                console.log("Playlist created");
+                console.log(res);
+            })
+            .catch(err => {
+                console.log("Playlist error");
+                console.log(err);
+            })
+    };
 
     useEffect(() => {
         fetch('/tracks-data')
@@ -51,10 +113,9 @@ function Tracks() {
                 return res.json()
             })
             .then(tracks => {
-                for (let track in tracks) {
-                    tracks[track].isPlaying = false;
-                }
+                tracks.forEach(track => track.isPlaying = false);
                 setTracks(tracks);
+                console.log(tracks);
             })
             .catch(function (err) {
                 console.log(err);
@@ -62,9 +123,11 @@ function Tracks() {
 
     }, []);
 
-    useEffect(() => { 
+    useEffect(() => {
 
-    }, [preview]);
+
+
+    }, [tracks]);
 
     return (
         <div>
@@ -77,15 +140,18 @@ function Tracks() {
                         <div class="artist-name" text-align="centered" onClick={() => redirectToTrack(track)}>
                             "{track?.name}"<br></br> by <br></br>{getName(track?.artists)}
                         </div>
-                        <div>
-                            <img src={play} class="icon" onClick={() => playPreview(track)} />
-                        </div>
                         <div class="artist-description">
                             From "{track?.album?.name}"
                         </div>
+                        <img src={getIcon(track)} class="icon-preview"
+                            onClick={() => preview(track)}
+                        />
                     </div>
                 ))}
             </animated.div>
+            <div>
+                <button onClick={createPlaylist}>Create All Time Favourites playlist.</button>
+            </div>
         </div>
     );
 

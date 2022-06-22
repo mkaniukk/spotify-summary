@@ -1,7 +1,6 @@
 import React, { Component, useEffect, useState } from 'react';
 import {NumFormatter, Capitalize} from '../utils';
 import { useSpring, animated } from 'react-spring'
-import { AnimateSharedLayout } from "framer-motion"
 import { Link } from "react-router-dom";
 import axios from 'axios';
 import { render } from '@testing-library/react';
@@ -40,17 +39,19 @@ function Artists () {
     }
 
     useEffect(() => {
-        fetch('/artists-data')
-        .then(res => {
-            return res.json()
-        })
-        .then(artists => {
-            setArtists(artists);
-        })
-        .catch(function(err){
-            console.log('Error');
-        })
-
+        const getData = async () => {
+            await fetch('/artists-data')
+            .then(res => {
+                return res.json()
+            })
+            .then(artists => {
+                setArtists(artists);
+            })
+            .catch(function(err){
+                console.log('Error');
+            })
+        }
+        getData();
     }, []);
 
     return (
@@ -74,9 +75,6 @@ function Artists () {
                     </div>
                 ))}
             </animated.div>
-            <div>
-                <button>Create All Time Favourites playlist.</button>
-            </div>
         </div>
     );
 
