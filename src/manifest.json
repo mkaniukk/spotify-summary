@@ -1,0 +1,38 @@
+{
+  "short_name": "Spotify Summary",
+  "name": "Present User's All-Time Favourites from Spotify",
+  "icons": [
+    {
+      "src": "artists.png",
+      "type": "image/png"
+    },
+    {
+      "src": "home_icon.png",
+      "type": "image/png"    
+    },
+    {
+      "src": "pause.png",
+      "type": "image/png"    
+    },
+    {
+      "src": "play.png",
+      "type": "image/png"    
+    },
+    {
+      "src": "settings.png",
+      "type": "image/png"    
+    },
+    {
+      "src": "tracks.png",
+      "type": "image/png"    
+    },
+    {
+      "src": "user.png",
+      "type": "image/png"    
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff"
+}

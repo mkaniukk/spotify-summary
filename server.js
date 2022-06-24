@@ -51,7 +51,7 @@ app.get('/', async (req, res) => {
 });
 
 app.get("/create-playlist", async (req, res) => {
-  
+
   var refresh_token = req.query.refresh_token;
   var authOptions = {
     url: 'https://accounts.spotify.com/api/token',
@@ -63,29 +63,30 @@ app.get("/create-playlist", async (req, res) => {
     json: true
   };
 
-  request.post(authOptions, function(error, response, body) {
+  request.post(authOptions, function (error, response, body) {
+
     if (!error && response.statusCode === 200) {
       var access_token = body.access_token;
       res.send({
         'access_token': access_token
       });
     }
-    
+
     var playlistInfo = {
       url: 'https://api.spotify.com/v1/me/playlists',
       headers: { 'Authorization': 'Bearer ' + access_token },
       body: { "name": "New Playlist", "description": "New playlist description", "public": false },
       json: true,
     };
-  
+
     request.post(playlistInfo, function (error, response, body) {
       if (!error && response.statusCode == 200) {
         console.log(body);
       } else {
         console.log(error);
       }
-    }
-    );
+    });
+
   });
 
 })

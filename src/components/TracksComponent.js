@@ -41,68 +41,65 @@ function Tracks() {
 
     const preview = (track) => {
         try {
+            console.log("Before " + previewRef.current?.src);
             if (!track?.preview_url)
                 return
             // Pause the track that is already being played
-            if (track?.preview_url === previewRef.current?.audio?.src) {
-                previewRef.current?.audio.pause();
+            if (track?.preview_url === previewRef.current?.src) {
+                console.log("Stop current " + previewRef.current?.src);
+                previewRef.current.pause();
+                setTrackPlaying(previewRef.current.src, false);
                 previewRef.current = null;
-                setTracks(
-                    tracks.map(item =>
-                        item.id === track.id
-                            ? { ...item, isPlaying: false }
-                            : item
-                    ))
-                console.log("stop playing");
-                console.log(tracks);
             } else {
                 // Pause previous track
                 if (previewRef.current !== null) {
-                    previewRef.current?.audio.pause();
-                    setTracks(
-                        tracks.map(item =>
-                            item.id === previewRef.current.id
-                                ? { ...item, isPlaying: false }
-                                : item
-                        ))
-                    console.log("stop playing previous");
-                    console.log(tracks);
+                    console.log("Stop previous " + previewRef.current?.src);
+                    previewRef.current.pause();
+                    setTrackPlaying(previewRef.current.src, false);
                     previewRef.current = null;
                 }
                 // No track is playing 
                 let url = track?.preview_url;
                 let audio = new Audio(url);
-                previewRef.current = { audio: audio, id: track?.id };
+                previewRef.current = audio;
+                console.log("Play " + previewRef.current?.src);
                 audio.play();
-                setTracks(
-                    tracks.map(item =>
-                        item.id === track.id
-                            ? { ...item, isPlaying: true }
-                            : item
-                    ))
-                console.log("start playing");
-                console.log(tracks);
+                setTrackPlaying(track?.preview_url, true);
             }
+            showIsPlaying();
         } catch (error) {
             console.log(error.message);
         }
     }
 
-    const getIcon = (track) => {
-        if (track.isPlaying)
-            return pause;
-        else
-            return play;
+    const setTrackPlaying = (preview_url, state) => {
+        setTracks(
+            tracks.map(item =>
+                item.preview_url === preview_url
+                    ? { ...item, isPlaying: state }
+                    : item
+            ))
     }
 
+    const showIsPlaying = () => {
+        tracks.forEach(track => console.log(track.isPlaying));
+    }
+
+    const getIcon = (track) => {
+        if (track.isPlaying){
+            // console.log("pause icon");
+            return pause;
+        }else{
+            // console.log("play icon");
+            return play;
+        }
+    }
     const createPlaylist = () => {
         fetch('/create-playlist')
             .then(res => {
-                console.log("Playlist created");
                 console.log(res);
             })
             .catch(err => {
-                console.log("Playlist error");
                 console.log(err);
             })
     };
@@ -124,9 +121,7 @@ function Tracks() {
     }, []);
 
     useEffect(() => {
-
-
-
+        console.log("tracks changed");
     }, [tracks]);
 
     return (

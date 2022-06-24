@@ -5,22 +5,6 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
-// import { createStore } from 'redux';
-// import { Provider } from 'react-redux';
-
-// let store = createStore(countReducer);
-
-// const countReducer = function (state = 0, action) {
-//   switch (action.type) {
-//     case "INCREMENT":
-//       return state + 1;
-//     case "DECREMENT":
-//       return state - 1;
-//     default:
-//       return state;
-//   }
-// };
-
 ReactDOM.render(
   <React.StrictMode>
       <App />
