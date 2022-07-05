@@ -1,4 +1,4 @@
-# Spotify User Summary using Sportify API.
+# Spotify User Summary using Spotify API.
 
 This project is using [Spotify API](https://developer.spotify.com/documentation/web-api/).
 
