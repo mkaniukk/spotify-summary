@@ -34,12 +34,14 @@ function Tracks() {
     }
 
     const redirectToTrack = (track) => {
+        window.navigator.vibrate(100);
         let path = track?.external_urls?.spotify;
         const newWindow = window.open(path, '_blank', 'noopener,noreferrer')
         if (newWindow) newWindow.opener = null
     }
 
     const preview = (track) => {
+        window.navigator.vibrate(100);
         try {
             console.log("Before " + previewRef.current?.src);
             if (!track?.preview_url)

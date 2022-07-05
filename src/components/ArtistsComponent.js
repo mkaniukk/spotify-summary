@@ -33,6 +33,7 @@ function Artists () {
     }
 
     const redirectToArtist = (artist) => {
+        window.navigator.vibrate(100);
         let path = artist?.external_urls?.spotify;
         const newWindow = window.open(path, '_blank', 'noopener,noreferrer')
         if (newWindow) newWindow.opener = null

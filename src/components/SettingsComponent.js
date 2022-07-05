@@ -1,6 +1,7 @@
 import React, { Component, useEffect, useState } from 'react';
 import {NumFormatter, Capitalize} from '../utils';
 import { useSpring, animated } from 'react-spring'
+import themeSlice from '../options/themeSlice';
 
 function Settings () {
     const [user, setUser] = React.useState([{}]);
@@ -12,8 +13,9 @@ function Settings () {
     }, [])
 
     return (
-        <div>
-            This is settings component.
+        <div class="page-header">
+            <input type="checkbox" id="switch" class="checkbox" />
+            <label for="switch" class="toggle" />
         </div>
     );
 }
