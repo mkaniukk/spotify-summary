@@ -1,10 +1,7 @@
 import React, { Component, useEffect, useRef, useState } from 'react';
 import { useSpring, animated } from 'react-spring'
-import { useNavigate } from "react-router-dom";
-import axios from 'axios';
 import play from '../icons/play.png'
 import pause from '../icons/pause.png'
-import { useForceUpdate } from 'framer-motion';
 
 function Tracks() {
     const [tracks, setTracks] = React.useState([{}]);
