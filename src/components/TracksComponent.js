@@ -5,7 +5,6 @@ import pause from '../icons/pause.png'
 
 function Tracks() {
     const [tracks, setTracks] = React.useState([{}]);
-    const [isPlaying, setIsPlaying] = React.useState([{}]);
     const previewRef = React.useRef(null);
 
     const fadeMount = useSpring({ to: { opacity: 1 }, from: { opacity: 0 }, config: { duration: 1000 } });
@@ -40,19 +39,16 @@ function Tracks() {
     const preview = (track) => {
         window.navigator.vibrate(100);
         try {
-            console.log("Before " + previewRef.current?.src);
             if (!track?.preview_url)
                 return
             // Pause the track that is already being played
             if (track?.preview_url === previewRef.current?.src) {
-                console.log("Stop current " + previewRef.current?.src);
                 previewRef.current.pause();
                 setTrackPlaying(previewRef.current.src, false);
                 previewRef.current = null;
             } else {
                 // Pause previous track
                 if (previewRef.current !== null) {
-                    console.log("Stop previous " + previewRef.current?.src);
                     previewRef.current.pause();
                     setTrackPlaying(previewRef.current.src, false);
                     previewRef.current = null;
@@ -61,7 +57,6 @@ function Tracks() {
                 let url = track?.preview_url;
                 let audio = new Audio(url);
                 previewRef.current = audio;
-                console.log("Play " + previewRef.current?.src);
                 audio.play();
                 setTrackPlaying(track?.preview_url, true);
             }
@@ -72,12 +67,12 @@ function Tracks() {
     }
 
     const setTrackPlaying = (preview_url, state) => {
-        setTracks(
-            tracks.map(item =>
-                item.preview_url === preview_url
-                    ? { ...item, isPlaying: state }
-                    : item
-            ))
+        let newTracks = [...tracks];
+        for(let track in newTracks){
+            if(newTracks[track].preview_url === preview_url)
+                newTracks[track].isPlaying = state;
+        }
+        setTracks(newTracks);
     }
 
     const showIsPlaying = () => {
@@ -86,10 +81,8 @@ function Tracks() {
 
     const getIcon = (track) => {
         if (track.isPlaying){
-            // console.log("pause icon");
             return pause;
         }else{
-            // console.log("play icon");
             return play;
         }
     }
@@ -118,10 +111,6 @@ function Tracks() {
             })
 
     }, []);
-
-    useEffect(() => {
-        console.log("tracks changed");
-    }, [tracks]);
 
     return (
         <div>
