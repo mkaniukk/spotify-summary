@@ -110,6 +110,10 @@ function Tracks() {
                 console.log(err);
             })
 
+            return() => {
+                previewRef.current.pause();
+            }
+
     }, []);
 
     return (
