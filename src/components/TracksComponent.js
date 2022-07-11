@@ -1,7 +1,9 @@
 import React, { Component, useEffect, useRef, useState } from 'react';
 import { useSpring, animated } from 'react-spring'
+import { Alert, Modal, Button } from 'react-bootstrap'
 import play from '../icons/play.png'
 import pause from '../icons/pause.png'
+import finalPropsSelectorFactory from 'react-redux/es/connect/selectorFactory';
 
 function Tracks() {
     const [tracks, setTracks] = React.useState([{}]);
@@ -39,8 +41,10 @@ function Tracks() {
     const preview = (track) => {
         window.navigator.vibrate(100);
         try {
-            if (!track?.preview_url)
+            if (!track?.preview_url){
+                setShowAlert(true);
                 return
+            }
             // Pause the track that is already being played
             if (track?.preview_url === previewRef.current?.src) {
                 previewRef.current.pause();
